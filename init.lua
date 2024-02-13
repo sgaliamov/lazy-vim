@@ -1,17 +1,5 @@
--- Install lazy vim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  -- bootstrap lazy.nvim
-  -- stylua: ignore
-  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
-    lazypath })
-end
-vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+require("config.lazy")
 
-if vim.g.vscode then
-  -- VSCode extension
-
-  vim.opt.clipboard = 'unnamedplus'
-else
-
-end
+-- vim.opt.clipboard = 'unnamedplus'
+-- vim.wo.number = true
+-- vim.g.mapleader = ' '
