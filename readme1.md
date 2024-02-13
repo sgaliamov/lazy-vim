@@ -7,3 +7,10 @@ My config for [LazyVim](https://github.com/LazyVim/LazyVim).
 git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 
 ```
+
+## Setup
+
+1. separate config for vscode.
+1. leader key bindings for vscode.
+1. tree for terminal.
+1. highlight yank.
