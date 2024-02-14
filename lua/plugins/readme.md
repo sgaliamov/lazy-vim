@@ -1,0 +1,3 @@
+# Plugins
+
+All plugins configuration.

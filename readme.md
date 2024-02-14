@@ -13,4 +13,6 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 1. separate config for vscode.
 1. leader key bindings for vscode.
 1. tree for terminal.
-1. highlight yank.
+1. highlight yank..
+1. rust lsp for terminal.
+1. lua lsp for terminal.
