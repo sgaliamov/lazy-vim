@@ -1,6 +1,5 @@
--- Install lazy vim
+-- Install lazy vim.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
     "git",
@@ -10,13 +9,21 @@ if not vim.loop.fs_stat(lazypath) then
     "--branch=stable",
     lazypath })
 end
-
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+-- Conditional plugings.
+local spec = {
+  { import = "plugins" }
+}
+
+if vim.g.vscode then
+else
+  table.insert(spec, { import = "plugins/nvim" })
+end
+
+-- Load plugings.
 require("lazy").setup({
-  spec = {
-    { import = "plugins" },
-  },
+  spec = spec,
   defaults = {
     lazy = false,
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
@@ -39,7 +46,3 @@ require("lazy").setup({
     checker = { enabled = true }, -- automatically check for plugin updates
   }
 })
-
-
--- for k,v in pairs(second_table) do first_table[k] = v end
--- vim.keymap.set('n', '<Leader>ex1', '<Cmd>echomsg "Example 1"<CR>')
