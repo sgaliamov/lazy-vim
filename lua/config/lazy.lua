@@ -1,3 +1,7 @@
+-- Make sure to set `mapleader` before lazy so your mappings are correct
+vim.g.mapleader = " "
+vim.g.maplocalleader = ","
+
 -- Install lazy vim.
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
@@ -11,12 +15,14 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
--- Conditional plugings.
+-- Global plugins.
 local spec = {
   { import = "plugins" }
 }
 
+-- Conditional plugings.
 if vim.g.vscode then
+  table.insert(spec, { import = "plugins/vscode" })
 else
   table.insert(spec, { import = "plugins/nvim" })
 end
