@@ -13,7 +13,7 @@ local function key_opts(desc, buffer, opts)
     return vim.tbl_extend('force', default_opts, opts or {})
 end
 
--- Set mapping for a key.
+-- Set mapping for a key with default options.
 function M.set_key(mode, lhs, rhs, desc, buffer)
     local opts = key_opts(desc, buffer)
 
@@ -23,7 +23,7 @@ function M.set_key(mode, lhs, rhs, desc, buffer)
     if not is_mapped then
         vim.keymap.set(mode, lhs, rhs, opts)
     else
-        vim.notify('Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists.', 'error') -- todo: show at startup.
+        error('Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists.') -- todo: show at startup.
     end
 end
 

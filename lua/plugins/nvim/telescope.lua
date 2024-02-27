@@ -3,8 +3,8 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' },
     init = function()
         local builtin = require 'telescope.builtin'
-        local set = require('utils').set_key
+        local set_key = require('utils').set_key
 
-        set('n', '<leader><leader>', builtin.find_files, 'Find files')
+        set_key('n', '<leader><leader>', builtin.find_files, 'Find files')
     end
 }

@@ -2,6 +2,7 @@ local set_keys = require('utils').set_keys
 
 local mappings = {
     -- Move to window using the <ctrl> hjkl keys.
+    -- todo: create window if no window on the direction
     ['<M-h>'] = { '<C-w>h', 'Go to left window' },
     ['<M-j>'] = { '<C-w>j', 'Go to lower window' },
     ['<M-k>'] = { '<C-w>k', 'Go to upper window' },
