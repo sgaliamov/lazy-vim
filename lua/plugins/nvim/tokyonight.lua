@@ -5,6 +5,7 @@ return {
   opts = {
     transparent = true
   },
-  config = function()
-  end,
+  init = function()
+    vim.cmd [[colorscheme tokyonight]]
+  end
 }
