@@ -1,6 +1,6 @@
 return {
-    "rcarriga/nvim-notify",
+    'rcarriga/nvim-notify',
     otps = function()
-        vim.notify = require("notify")
+        vim.notify = require('notify')
     end
 }

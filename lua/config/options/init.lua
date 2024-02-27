@@ -1,7 +1,7 @@
-vim.opt.clipboard = "unnamedplus"
+vim.opt.clipboard = 'unnamedplus'
 
 if vim.g.vscode then
-    require("config.options.vscode")
+    require('config.options.vscode')
 else
-    require("config.options.nvim")
+    require('config.options.nvim')
 end
