@@ -1,10 +1,6 @@
-local u = require 'utils'
-local set = u.set_key
+local set_keys = require('utils').set_keys
 
--- todo: create a function.
 local mappings = {
-    -- todo: try in vscode
-    ['<Esc>'] = { ':noh<Esc>', 'Cancel search highlighting with ESC' },
     -- Move to window using the <ctrl> hjkl keys.
     ['<M-h>'] = { '<C-w>h', 'Go to left window' },
     ['<M-j>'] = { '<C-w>j', 'Go to lower window' },
@@ -12,9 +8,7 @@ local mappings = {
     ['<M-l>'] = { '<C-w>l', 'Go to right window' }
 }
 
-for keys, mapping in pairs(mappings) do
-    set('n', keys, mapping[1], mapping[2])
-end
+set_keys('n', mappings)
 
 -- -- Paste over currently selected text without yanking it
 -- -- keymap('v', 'p', ''_dP', default_opts)

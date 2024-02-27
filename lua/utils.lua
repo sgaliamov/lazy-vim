@@ -13,6 +13,12 @@ function M.set_key(mode, lhs, rhs, desc, buffer)
     end
 end
 
+function M.set_keys(mode, mappings, buffer)
+    for keys, mapping in pairs(mappings) do
+        M.set_key(mode, keys, mapping[1], mapping[2], buffer)
+    end
+end
+
 function M.key_opts(desc, buffer, opts)
     local default_opts = {
         buffer = buffer,
