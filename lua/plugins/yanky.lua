@@ -1,5 +1,1 @@
-return {
-  'gbprod/yanky.nvim',
-  opts = {
-  }
-}
+return { 'gbprod/yanky.nvim' }

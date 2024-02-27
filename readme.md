@@ -16,3 +16,4 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 1. lua lsp for terminal.
 1. fancy status
 1. try aveplen/ruscmd.nvim
+1. surround plugin
