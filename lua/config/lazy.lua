@@ -1,7 +1,3 @@
--- Make sure to set `mapleader` before lazy so your mappings are correct
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ','
-
 -- Install lazy vim.
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
