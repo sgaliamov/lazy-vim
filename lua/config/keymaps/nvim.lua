@@ -1,12 +1,15 @@
 local set_keys = require('utils').set_keys
 
 local mappings = {
+    -- Toggle languages.
+    ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
+    ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },                -- todo: in vscode the layout is not working in insert mode.
+
     -- Move to window using the <ctrl> hjkl keys.
-    -- todo: create window if no window on the direction
-    ['<M-h>'] = { '<C-w>h', 'Go to left window' },
+    ['<M-h>'] = { '<C-w>h', 'Go to left window' },                              -- todo: create window if no window on the direction
     ['<M-j>'] = { '<C-w>j', 'Go to lower window' },
     ['<M-k>'] = { '<C-w>k', 'Go to upper window' },
-    ['<M-l>'] = { '<C-w>l', 'Go to right window' }
+    ['<M-l>'] = { '<C-w>l', 'Go to right window' },
 }
 
 set_keys('n', mappings)
