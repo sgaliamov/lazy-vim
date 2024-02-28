@@ -36,9 +36,9 @@ require('lazy').setup({
     rtp = {
       disabled_plugins = {
         'gzip',
-        'matchit',     -- matches not only braces
+        'matchit', -- matches not only braces
         -- 'matchparen', -- keep to higlight paired braces
-        'netrwPlugin', -- can be replces with nvim-tree
+        'netrwPlugin',
         'tarPlugin',
         'tohtml',
         'tutor',

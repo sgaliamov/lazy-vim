@@ -18,5 +18,6 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 1. fancy status line.
 1. tree is opened slowly.
 1. tree view in telescope.
-1. try aveplen/ruscmd.nvim
-1. surround plugin
+1. try aveplen/ruscmd.nvim.
+1. surround plugin.
+1. style settings for lua.

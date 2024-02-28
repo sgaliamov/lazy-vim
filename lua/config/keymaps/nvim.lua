@@ -6,10 +6,12 @@ local mappings = {
     ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },                -- todo: in vscode the layout is not working in insert mode.
 
     -- Move to window using the <ctrl> hjkl keys.
-    ['<M-h>'] = { '<C-w>h', 'Go to left window' },                              -- todo: create window if no window on the direction
-    ['<M-j>'] = { '<C-w>j', 'Go to lower window' },
-    ['<M-k>'] = { '<C-w>k', 'Go to upper window' },
-    ['<M-l>'] = { '<C-w>l', 'Go to right window' },
+    --['<M-h>'] = { '<C-w>h', 'Go to left window' },                              -- todo: create window if no window on the direction
+    --['<M-j>'] = { '<C-w>j', 'Go to lower window' },
+    --['<M-k>'] = { '<C-w>k', 'Go to upper window' },
+    --['<M-l>'] = { '<C-w>l', 'Go to right window' },
+
+    ['<C-q>q'] = { ':qa<cr>', 'Quit all' }
 }
 
 set_keys('n', mappings)
