@@ -14,8 +14,8 @@ local function key_opts(desc, buffer, opts)
 end
 
 -- Set mapping for a key with default options.
-function M.set_key(mode, lhs, rhs, desc, buffer)
-    local opts = key_opts(desc, buffer)
+function M.set_key(mode, lhs, rhs, desc, buffer, opts) -- todo: merge buffer and opts.
+    local opts = key_opts(desc, buffer, opts)
 
     -- Check if the mapping already exists
     local is_mapped = vim.fn.maparg(lhs, mode) ~= ''

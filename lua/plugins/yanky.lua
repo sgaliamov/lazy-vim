@@ -1,1 +1,4 @@
-return { 'gbprod/yanky.nvim' }
+return {
+    'gbprod/yanky.nvim',
+    opts = {} -- the empty table is required.
+}

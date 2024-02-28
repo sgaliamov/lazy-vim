@@ -4,6 +4,18 @@ vim.g.loaded_netrwPlugin = 1
 
 local set_key = require('utils').set_key
 
+local tree_focus_or_toggle = function()
+    local nvimTree = require("nvim-tree.api")
+    local currentBuf = vim.api.nvim_get_current_buf()
+    local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
+
+    if currentBufFt == "NvimTree" then
+        nvimTree.tree.toggle()
+    else
+        nvimTree.tree.focus()
+    end
+end
+
 local function on_attach(bufnr)
     local api = require 'nvim-tree.api'
 
@@ -11,7 +23,7 @@ local function on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr)
+    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr) -- todo: fix Mapping for "?" in mode "n" already exists.
 end
 
 return {
@@ -22,7 +34,7 @@ return {
         disable_netrw = true,
     },
     init = function()
-        set_key('n', "<leader>t", ':NvimTreeToggle<cr>', 'Tree toggle')
+        set_key('n', "<leader>t", tree_focus_or_toggle, 'Tree toggle')
     end,
     dependencies = {
         'nvim-tree/nvim-web-devicons'
