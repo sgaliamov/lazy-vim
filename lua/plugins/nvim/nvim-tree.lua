@@ -19,7 +19,7 @@ local function on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr, true) -- todo: fix Mapping for "?" in mode "n" already exists.
+    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr, true)
 end
 
 return {
