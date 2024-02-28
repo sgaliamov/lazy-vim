@@ -1,7 +1,3 @@
--- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 local set_key = require('utils').set_key
 
 local tree_focus_or_toggle = function()
@@ -23,7 +19,7 @@ local function on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr) -- todo: fix Mapping for "?" in mode "n" already exists.
+    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr, true) -- todo: fix Mapping for "?" in mode "n" already exists.
 end
 
 return {
@@ -32,9 +28,22 @@ return {
         on_attach     = on_attach,
         hijack_cursor = true,
         disable_netrw = true,
+        git           = {
+            enable = false
+        },
+        view          = {
+            signcolumn = "no",
+            float = {
+                enable = false
+            }
+        }
     },
     init = function()
-        set_key('n', "<leader>t", tree_focus_or_toggle, 'Tree toggle')
+        set_key('n', "<leader>t", tree_focus_or_toggle, 'Toggle tree')
+
+        -- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
+        vim.g.loaded_netrw = 1
+        vim.g.loaded_netrwPlugin = 1
     end,
     dependencies = {
         'nvim-tree/nvim-web-devicons'
