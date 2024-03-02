@@ -62,7 +62,7 @@ end
 --- @param force boolean | nil
 function M.map(lhs, rhs, description, buffer_or_opts, modes, force)
     modes = modes or { 'n', 'v', 'o' }
-    if force and is_used(lhs, modes) then
+    if not force and is_used(lhs, modes) then
         return
     end
 
