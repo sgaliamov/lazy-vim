@@ -10,7 +10,8 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 
 ## Setup
 
-1. setup jj for esc
+1. expand selection.
+1. comment code.
 1. format in lua.
 1. refactoring in lua.
 1. rust lsp for terminal.
@@ -27,3 +28,4 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 1. style settings for lua.
 1. show current file in tree.
 1. undo tree (try in vscode)
+1. hide hidden files in tree

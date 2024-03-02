@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Global plugins.
 local spec = {
-    { import = 'plugins' }
+  { import = 'plugins' }
 }
 
 -- Conditional plugings.

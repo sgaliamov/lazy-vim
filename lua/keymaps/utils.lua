@@ -40,10 +40,13 @@ end
 --- @return boolean true if used
 local function is_used(lhs, modes)
     modes = type(modes) == 'table' and modes or { modes }
+    local timer = vim.loop.new_timer()
 
     for _, mode in ipairs(modes) do
         if vim.fn.maparg(lhs, mode) ~= '' then
-            vim.notify('Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists.') -- todo: show at startup.
+            timer:start(1000, 0, function() -- todo: find better way to notify errors
+                vim.notify('Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists. The binding is ignored.', 4)
+            end)
             return true
         end
     end
@@ -76,7 +79,9 @@ end
 --- `opts` may have a buffer.
 function M.map_keys(mappings)
     for lhs, mapping in pairs(mappings) do
-        M.map(lhs, mapping[1], mapping[2], mapping.opts, mapping.modes, mapping.force)
+        local modes = mapping.modes or mapping.m -- todo: maybe better merge.
+
+        M.map(lhs, mapping[1], mapping[2], mapping.opts, modes, mapping.force)
     end
 end
 

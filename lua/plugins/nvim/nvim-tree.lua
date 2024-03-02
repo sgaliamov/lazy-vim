@@ -29,7 +29,7 @@ return {
         hijack_cursor = true,
         disable_netrw = true,
         git           = {
-            enable = false
+            enable = false -- very slow
         },
         view          = {
             signcolumn = "no",

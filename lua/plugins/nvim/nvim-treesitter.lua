@@ -1,6 +1,6 @@
 return {
     'nvim-treesitter/nvim-treesitter',
-    enabled = false,
+    enabled = false, -- todo: fix it
     opts = {
         ensure_installed = {
             'json',
@@ -11,7 +11,7 @@ return {
             'yaml',
         },
         higlights = {
-            enable = true -- todo: fix it
+            enable = true
         }
     }
 }

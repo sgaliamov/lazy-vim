@@ -1,6 +1,10 @@
 return {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'smartpde/telescope-recent-files' },
+    dependencies = {
+        'nvim-lua/plenary.nvim',
+        'BurntSushi/ripgrep',
+        'smartpde/telescope-recent-files'
+    },
     init = function()
         local builtin = require 'telescope.builtin'
         local map_keys = require('keymaps.utils').map_keys
