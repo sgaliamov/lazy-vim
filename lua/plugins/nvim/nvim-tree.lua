@@ -1,11 +1,11 @@
-local set_key = require('utils').set_key
+local map = require('keymaps.utils').map
 
 local tree_focus_or_toggle = function()
-    local nvimTree = require("nvim-tree.api")
+    local nvimTree = require('nvim-tree.api')
     local currentBuf = vim.api.nvim_get_current_buf()
-    local currentBufFt = vim.api.nvim_get_option_value("filetype", { buf = currentBuf })
+    local currentBufFt = vim.api.nvim_get_option_value('filetype', { buf = currentBuf })
 
-    if currentBufFt == "NvimTree" then
+    if currentBufFt == 'NvimTree' then
         nvimTree.tree.toggle()
     else
         nvimTree.tree.focus()
@@ -19,7 +19,7 @@ local function on_attach(bufnr)
     api.config.mappings.default_on_attach(bufnr)
 
     -- custom mappings
-    set_key('n', '?', api.tree.toggle_help, 'Help', bufnr, true)
+    map('?', api.tree.toggle_help, 'Help', bufnr, 'n', true)
 end
 
 return {
@@ -38,8 +38,10 @@ return {
             }
         }
     },
+    keys = {
+    },
     init = function()
-        set_key('n', "<leader>t", tree_focus_or_toggle, 'Toggle tree')
+        map('<leader>e', tree_focus_or_toggle, 'Toggle tree')
 
         -- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
         vim.g.loaded_netrw = 1

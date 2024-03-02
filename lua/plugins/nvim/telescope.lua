@@ -1,10 +1,16 @@
 return {
     'nvim-telescope/telescope.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep' },
+    dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'smartpde/telescope-recent-files' },
     init = function()
         local builtin = require 'telescope.builtin'
-        local set_key = require('utils').set_key
+        local map_keys = require('keymaps.utils').map_keys
 
-        set_key('n', '<leader><leader>', builtin.find_files, 'Find files')
+        local mappings = {
+            ['<leader>fg'] = { builtin.git_files, 'telescope: Git files' },
+            ['<leader>ff'] = { builtin.find_files, 'telescope: Find files' },
+            ['<leader>fr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'telescope: Recent files' }
+        }
+
+        map_keys(mappings)
     end
 }

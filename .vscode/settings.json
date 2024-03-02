@@ -1,3 +1,4 @@
 {
+  "Lua.workspace.library": ["C:/tools/neovim/nvim-win64/share/nvim/runtime/"],
   "Lua.diagnostics.globals": ["vim"]
 }
