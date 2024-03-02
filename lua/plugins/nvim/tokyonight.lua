@@ -6,7 +6,6 @@ return {
     transparent = true
   },
   init = function()
-    -- vim.cmd 'colorscheme tokyonight' -- todo: test it
-    vim.opt.colorscheme = 'tokyonight'
+    vim.cmd 'colorscheme tokyonight'
   end
 }
