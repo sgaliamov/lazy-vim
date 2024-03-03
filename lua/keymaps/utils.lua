@@ -77,7 +77,7 @@ end
 --- @param mappings any example: { [lhs] = { rhs, desc, opts = { buffer = buf }, modes = {'!'}, force = true } };
 --- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
 --- `opts` may have a buffer.
-function M.map_keys(mappings)
+function M.map_keys(mappings) -- todo: map_keys should be able to apply same bindings in different modes
     for lhs, mapping in pairs(mappings) do
         local modes = mapping.modes or mapping.m -- todo: maybe better merge.
 

@@ -1,9 +1,10 @@
 return {
-    { 'williamboman/mason.nvim' },
-    { 'williamboman/mason-lspconfig.nvim' },
-    { 'VonHeikemen/lsp-zero.nvim' },
-    { 'neovim/nvim-lspconfig' },
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/nvim-cmp' },
-    { 'L3MON4D3/LuaSnip' },
+  'VonHeikemen/lsp-zero.nvim',
+  opts = {
+    on_attach = function(client, bufnr)
+      print(1)
+      local lsp_zero = require('lsp-zero')
+      lsp_zero.default_keymaps({buffer = bufnr})
+    end
+  }
 }

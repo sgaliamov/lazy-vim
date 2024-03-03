@@ -10,9 +10,9 @@ return {
         local map_keys = require('keymaps.utils').map_keys
 
         local mappings = {
-            ['<leader>tg'] = { builtin.git_files, 'telescope: Git files' },
-            ['<leader>tf'] = { builtin.find_files, 'telescope: Find files' },
-            ['<leader>tr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'telescope: Recent files' }
+            ['<leader>tg'] = { builtin.git_files, 'Git files' },
+            ['<leader>tf'] = { builtin.find_files, 'Find files' },
+            ['<leader>tr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' }
         }
 
         map_keys(mappings)
