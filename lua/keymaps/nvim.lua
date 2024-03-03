@@ -4,8 +4,9 @@ local map = require('keymaps.utils').map
 local all_modes = { '!', 'n', 'v' }
 
 map_keys({
-  ['<Esc>'] = { ':noh<Esc>', 'Cancel search highlighting with ESC' },
+  ['<Esc>'] = { '<Esc>:noh<cr>', 'Cancel search highlighting with ESC' },
   ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
+  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },
 
   -- Toggle languages.
   ['<leader>l'] = { ':noh', 'Keyboard layouts...' },                          -- todo: find better way to set a group name.
@@ -28,16 +29,16 @@ map_keys({
   ['<leader>yy'] = { '"+yiw', 'Yank inner word in clipboard' },
   ['<leader>Y'] = { '"+Y', 'Yank line in clipboard' },
   ['x'] = { '"_x', 'Remove without yanking' },
-  ['<S-A-j>'] = { ':m +1<cr>gv=gv', 'Move text down' },
-  ['<S-A-k>'] = { ':m -2<cr>gv=gv', 'Move text up' },
+  ['<A-k>'] = { ':m -2<cr>gv=gv', 'Move text up' },
+  ['<A-j>'] = { ':m +1<cr>gv=gv', 'Move text down' },
 
   -- Move to window using the <Alt>+hjkl/arrow keys.
-  ['<A-h>'] = { '<C-w>h', 'Go to left window' }, -- todo: create window if no window on the direction
-  ['<A-j>'] = { '<C-w>j', 'Go to lower window' },
-  ['<A-k>'] = { '<C-w>k', 'Go to upper window' },
-  ['<A-l>'] = { '<C-w>l', 'Go to right window' },
-  ['<A-Left>'] = { '<C-w>h', 'Go to left window' }, -- todo: create window if no window on the direction
-  ['<A-Down>'] = { '<C-w>j', 'Go to lower window' },
-  ['<A-Up>'] = { '<C-w>k', 'Go to upper window' },
-  ['<A-Right>'] = { '<C-w>l', 'Go to right window' },
+  ['<C-h>'] = { '<C-w>h', 'Go to left window' }, -- todo: create window if no window on the direction
+  ['<C-j>'] = { '<C-w>j', 'Go to lower window' },
+  ['<C-k>'] = { '<C-w>k', 'Go to upper window' },
+  ['<C-l>'] = { '<C-w>l', 'Go to right window', force = true }, -- default: redraws and clears the screen
+  ['<C-Left>'] = { '<C-w>h', 'Go to left window' },
+  ['<C-Down>'] = { '<C-w>j', 'Go to lower window' },
+  ['<C-Up>'] = { '<C-w>k', 'Go to upper window' },
+  ['<C-Right>'] = { '<C-w>l', 'Go to right window' },
 })
