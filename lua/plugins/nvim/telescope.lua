@@ -1,6 +1,6 @@
 return {
   'nvim-telescope/telescope.nvim',
-  -- event = 'VeryLazy',
+  event = 'VeryLazy',
   dependencies = {
     'nvim-lua/plenary.nvim',
     'BurntSushi/ripgrep',
@@ -17,7 +17,8 @@ return {
       ['<leader>ff'] = { builtin.find_files, 'Find files' },
       ['<leader>fr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' }
     })
-
+  end,
+  config = function()
     require("telescope").setup {
       extensions = {
         ["ui-select"] = {

@@ -3,7 +3,7 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
   },
-  init = function()
+  config = function()
     local lspconfig = require('lspconfig')
 
     lspconfig.lua_ls.setup({});
