@@ -5,7 +5,7 @@ return {
   dependencies = { "nvim-lua/plenary.nvim" },
   init = function()
     require('keymaps.utils').map_keys({
-      ['<leader>tt'] = { ':TodoTelescope<cr>', 'Todo comments' }
+      ['<leader>td'] = { ':TodoTelescope<cr>', 'Todo comments' }
     })
   end,
   opts = {

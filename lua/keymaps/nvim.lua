@@ -8,7 +8,7 @@ map_keys({
   ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' }, -- todo: should be in the plug config.
 
   -- Toggle languages.
-  ['<leader>l'] = { ':noh', 'Keyboard layouts...' },                          -- todo: find better way to set a group name.
+  -- ['<leader>l'] = { ':noh<cr>', 'Keyboard layouts...' },                          -- todo: find better way to set a group name.
   ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
   ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },                -- todo: in vscode the layout is not working in insert mode.
 

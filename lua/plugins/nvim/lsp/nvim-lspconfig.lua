@@ -3,7 +3,7 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
   },
-  config = function()
+  init = function()
     local lspconfig = require('lspconfig')
 
     lspconfig.lua_ls.setup({});
@@ -44,8 +44,8 @@ return {
     -- vim.keymap.set('n', '<space>wl', function()
     --   print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     -- end, opts)
-    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
-    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<A-cr>', vim.lsp.buf.code_action, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', '<A-S-f>', function()
