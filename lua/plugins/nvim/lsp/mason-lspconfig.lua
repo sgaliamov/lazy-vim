@@ -1,16 +1,22 @@
 return {
-  'williamboman/mason-lspconfig.nvim',
+  'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim with the nvim-lspconfig
   dependencies = {
     'williamboman/mason.nvim',
+    'neovim/nvim-lspconfig',
   },
   opts = {
     ensure_installed = {
+      -- 'bashls',
+      -- 'bicep',
+      'biome', -- js and json
+      -- 'csharp_ls',
       'lua_ls',
-      'bicep',
-      'csharp_ls',
-      'jsonls',
+      'marksman', -- md
+      -- 'powershell_es',
       'rust_analyzer',
-      'yamlls'
+      'taplo',   -- toml
+      'lemminx', -- xml
+      'yamlls',  -- yaml
     }
   }
 }
