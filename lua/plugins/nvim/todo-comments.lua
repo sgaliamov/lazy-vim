@@ -8,7 +8,7 @@ return {
       todo = { icon = " ", color = "info" },
     }
   },
-  init = function()
+  config = function()
     local map_keys = require('keymaps.utils').map_keys
 
     map_keys({

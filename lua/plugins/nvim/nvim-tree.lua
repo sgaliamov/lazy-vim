@@ -45,8 +45,8 @@ return {
       },
     }
   },
-  init = function()
-    map('<leader>e', tree_focus_or_toggle, 'Toggle tree', {}, nil, true)
+  config = function()
+    map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
 
     -- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
     vim.g.loaded_netrw = 1
