@@ -15,14 +15,18 @@ vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Global plugins.
 local spec = {
-  { import = 'plugins' }
+    { import = 'plugins' }
 }
 
+-- todo: setup lazy event for all plugins
 -- Conditional plugings.
 if vim.g.vscode then
     table.insert(spec, { import = 'plugins/vscode' })
 else
-    table.insert(spec, { import = 'plugins/nvim' })
+    table.insert(spec, {
+        { import = 'plugins/nvim' },
+        { import = 'plugins/nvim/lsp' }
+    })
 end
 
 -- Load plugings.
