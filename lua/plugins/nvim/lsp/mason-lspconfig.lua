@@ -1,9 +1,6 @@
 return {
   'williamboman/mason-lspconfig.nvim', -- bridges mason.nvim with the nvim-lspconfig
-  dependencies = {
-    'williamboman/mason.nvim',
-    'neovim/nvim-lspconfig',
-  },
+  dependencies = { 'williamboman/mason.nvim' },
   opts = {
     ensure_installed = {
       -- 'bashls',
