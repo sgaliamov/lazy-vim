@@ -20,18 +20,18 @@ local M = {}
 --- @param buffer_or_opts table | number | nil
 --- @return any
 local function key_opts(description, buffer_or_opts)
-    local is_opts = type(buffer_or_opts) == 'table'
-    local is_buffer = type(buffer_or_opts) == 'number'
+  local is_opts = type(buffer_or_opts) == 'table'
+  local is_buffer = type(buffer_or_opts) == 'number'
 
-    local default_opts = {
-        buffer = is_buffer and buffer_or_opts,
-        desc = description,
-        noremap = true,
-        nowait = true,
-        silent = true
-    }
+  local default_opts = {
+    buffer = is_buffer and buffer_or_opts,
+    desc = description,
+    noremap = true,
+    nowait = true,
+    silent = true
+  }
 
-    return vim.tbl_extend('force', default_opts, is_opts and buffer_or_opts or {})
+  return vim.tbl_extend('force', default_opts, is_opts and buffer_or_opts or {})
 end
 
 --- Check if a key binding is already mapped in the specified modes.
@@ -39,20 +39,20 @@ end
 --- @param modes string | string[] Modes to check.
 --- @return boolean true if used
 local function is_used(lhs, modes)
-    modes = type(modes) == 'table' and modes or { modes }
+  modes = type(modes) == 'table' and modes or { modes }
 
-    for _, mode in ipairs(modes) do
-        if vim.fn.maparg(lhs, mode) ~= '' then
-            local timer = vim.loop.new_timer()
-            timer:start(2000, 0, function() -- todo: find better way to notify errors
-                vim.notify(
-                'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists. The binding is ignored.', 4)
-            end)
-            return true
-        end
+  for _, mode in ipairs(modes) do
+    if vim.fn.maparg(lhs, mode) ~= '' then
+      local timer = vim.loop.new_timer()
+      timer:start(2000, 0, function()       -- todo: find better way to notify errors
+        vim.notify(
+          'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists. The binding is ignored.', 4)
+      end)
+      return true
     end
+  end
 
-    return false
+  return false
 end
 
 --- Set mapping for a key with default options.
@@ -65,13 +65,13 @@ end
 --- @param modes string | string[] | nil Normal, Visual, Select, Operator-pending if `nil`
 --- @param force boolean | nil
 function M.map(lhs, rhs, description, buffer_or_opts, modes, force)
-    modes = modes or { 'n', 'v', 'o' }
-    if not force and is_used(lhs, modes) then
-        return
-    end
+  modes = modes or { 'n', 'v', 'o' }
+  if not force and is_used(lhs, modes) then
+    return
+  end
 
-    local opts = key_opts(description, buffer_or_opts)
-    vim.keymap.set(modes, lhs, rhs, opts)
+  local opts = key_opts(description, buffer_or_opts)
+  vim.keymap.set(modes, lhs, rhs, opts)
 end
 
 --- Set multiple mappings.
@@ -79,11 +79,11 @@ end
 --- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
 --- `opts` may have a buffer.
 function M.map_keys(mappings)                    -- todo: map_keys should be able to apply same bindings in different modes
-    for lhs, mapping in pairs(mappings) do
-        local modes = mapping.modes or mapping.m -- todo: maybe better merge.
+  for lhs, mapping in pairs(mappings) do
+    local modes = mapping.modes or mapping.m     -- todo: maybe better merge.
 
-        M.map(lhs, mapping[1], mapping[2], mapping.opts, modes, mapping.force)
-    end
+    M.map(lhs, mapping[1], mapping[2], mapping.opts, modes, mapping.force)
+  end
 end
 
 return M

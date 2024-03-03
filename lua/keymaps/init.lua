@@ -6,7 +6,7 @@ local mappings = {
 map_keys(mappings)
 
 if vim.g.vscode then
-    require('keymaps.vscode')
+  require('keymaps.vscode')
 else
-    require('keymaps.nvim')
+  require('keymaps.nvim')
 end

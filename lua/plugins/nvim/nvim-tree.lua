@@ -28,6 +28,13 @@ return {
     'nvim-tree/nvim-web-devicons'
   },
   keys = '<leader>e', -- todo: setup key binding here
+  init = function()
+    map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
+
+    -- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+  end,
   opts = {
     on_attach     = on_attach,
     hijack_cursor = true,
@@ -44,13 +51,5 @@ return {
         enable = false
       },
     }
-  },
-  config = function()
-    map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
-
-    -- Disable netrw: https://neovim.io/doc/user/pi_netrw.html#netrw-noload.
-    vim.g.loaded_netrw = 1
-    vim.g.loaded_netrwPlugin = 1
-  end,
-
+  }
 }
