@@ -1,12 +1,11 @@
 local map_keys = require('keymaps.utils').map_keys
-local map = require('keymaps.utils').map
 
 local all_modes = { '!', 'n', 'v' }
 
 map_keys({
   ['<Esc>'] = { '<Esc>:noh<cr>', 'Cancel search highlighting with ESC' },
   ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
-  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },
+  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' }, -- todo: should be in the plug config.
 
   -- Toggle languages.
   ['<leader>l'] = { ':noh', 'Keyboard layouts...' },                          -- todo: find better way to set a group name.

@@ -1,6 +1,7 @@
 return {
-  "folke/todo-comments.nvim",
+  'folke/todo-comments.nvim',
   event = 'VeryLazy',
+  -- keys = '<leader>tt', -- todo: use it?
   dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     keywords = {

@@ -24,6 +24,10 @@ end
 
 return {
   'nvim-tree/nvim-tree.lua',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons'
+  },
+  keys = '<leader>e', -- todo: setup key binding here
   opts = {
     on_attach     = on_attach,
     hijack_cursor = true,
@@ -41,7 +45,6 @@ return {
       },
     }
   },
-  keys = '<leader>e', -- todo: setup key binding here
   init = function()
     map('<leader>e', tree_focus_or_toggle, 'Toggle tree', {}, nil, true)
 
@@ -49,7 +52,5 @@ return {
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
   end,
-  dependencies = {
-    'nvim-tree/nvim-web-devicons'
-  }
+
 }
