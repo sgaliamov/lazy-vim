@@ -21,11 +21,11 @@ local spec = {
 -- todo: setup lazy event for all plugins
 -- Conditional plugings.
 if vim.g.vscode then
-  table.insert(spec, { import = 'plugins/vscode' })
+  table.insert(spec, { import = 'plugins.vscode' })
 else
   table.insert(spec, {
-    { import = 'plugins/nvim' },
-    { import = 'plugins/nvim/lsp' }
+    { import = 'plugins.nvim' },
+    { import = 'plugins.nvim.lsp' }
   })
 end
 
