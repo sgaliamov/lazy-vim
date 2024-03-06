@@ -4,7 +4,7 @@ require('keymaps.utils').map_keys({
 
   -- Better yanking.
   ['<leader>c'] = { '"_ciw', 'Change inner word without yanking', m = 'n' },
-  ['x'] = { '"_x', 'Remove without yanking' },
+  ['x'] = { '"_x', 'Remove without yanking', m = 'n' },
   ['<leader>d'] = { '"_d', 'Delete without yanking' },
 })
 
