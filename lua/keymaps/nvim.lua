@@ -2,8 +2,8 @@ local vinc = { '!', 'n', 'v' }
 
 require('keymaps.utils').map_keys({
   ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },      -- todo: should be in the plug config.
-  ['<A-q>'] = { '<cmd>qa<cr>', 'Quit', m = vinc }, -- todo: find a way to use Ctrl
-  ['<A-s>'] = { '<cmd>wa<cr>', 'Save all', m = vinc },
+  ['<C-q><C-q>'] = { '<cmd>qa<cr>', 'Quit', m = vinc }, -- todo: find a way to use Ctrl
+  ['<C-s><C-s>'] = { '<cmd>wa<cr>', 'Save all', m = vinc },
   ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
 
   -- Toggle languages.
