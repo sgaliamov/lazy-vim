@@ -10,7 +10,9 @@ opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
 
-opt.cursorline = true-- highlight the current cursor line
+opt.cursorline = true -- highlight the current cursor line
+
+opt.autochdir = true -- set the working directory automatically to the parent folde of the buffer file
 
 -- vim.opt.termguicolors = true -- Nvim will automatically attempt to determine if the host terminal supports 24-bit color and will enable this option if it does
 
