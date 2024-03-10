@@ -1,7 +1,7 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    -- event = { "BufReadPre", "BufNewFile" },
+    event = { "BufReadPre", "BufNewFile" },
     build = ":TSUpdate",
     opts = {
       highlight = {
@@ -15,12 +15,14 @@ return {
         'rust',
         'xml',
         'yaml',
+        'c',
+        'cpp'
       },
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = "<M-w>",
-          node_incremental = "<M-w>",
+          init_selection = "<cr>",
+          node_incremental = "<cr>",
           scope_incremental = false,
           node_decremental = "<bs>",
         },
