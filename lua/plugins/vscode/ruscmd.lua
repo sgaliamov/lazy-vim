@@ -1,4 +1,5 @@
 return {
     'aveplen/ruscmd.nvim',
-    opts = {}
+    opts = {},
+    config = true
 }

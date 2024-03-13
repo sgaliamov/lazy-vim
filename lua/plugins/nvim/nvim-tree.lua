@@ -37,16 +37,19 @@ return {
     vim.g.loaded_netrwPlugin = 1
   end,
   opts = {
-    on_attach     = on_attach,
-    hijack_cursor = true,
-    disable_netrw = true,
-    git           = {
+    on_attach           = on_attach,
+    hijack_cursor       = true,
+    disable_netrw       = true,
+    update_focused_file = {
+      enable = true,
+    },
+    git                 = {
       enable = false -- very slow
     },
-    filters       = {
+    filters             = {
       custom = { ".git" },
     },
-    view          = {
+    view                = {
       signcolumn = "no",
       float = {
         enable = false
