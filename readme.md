@@ -8,8 +8,8 @@ git clone -b main https://github.com/sgaliamov/lazy-vim ./nvim
 
 ## Setup
 
-1. expand selection (treesitter?).
 1. comment code.
+1. configure hop or find better.
 1. refactoring in lua.
 1. rust lsp for terminal.
 1. autocomplete for lua and rust.
