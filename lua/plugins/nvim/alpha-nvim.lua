@@ -1,3 +1,7 @@
+--[[
+Start menu.
+]]
+
 return {
   {
     "goolord/alpha-nvim",
