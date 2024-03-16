@@ -1,12 +1,11 @@
---[[ 
+--[[
 AST for code.
-
-In case of errors try to run `:TSInstall {lang}`.
---]]
+]]
 
 return {
   'nvim-treesitter/nvim-treesitter',
-  event = { 'BufReadPre', 'BufNewFile' },
+  -- event = { 'BufReadPre', 'BufNewFile' }, -- todo: probably this breaks the pluggin randomly.
+  event = 'VeryLazy',
   build = ':TSUpdate',
   config = function()
     require 'nvim-treesitter.configs'.setup {
@@ -15,12 +14,12 @@ return {
       },
       indent = { enable = true },
       sync_install = false,
-      auto_install = false,
+      auto_install = true,
       ensure_installed = {
         'c',
         'cpp',
         'json',
-        -- 'lua',
+        'lua',
         'markdown_inline',
         'query',
         'rust',
