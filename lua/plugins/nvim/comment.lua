@@ -1,5 +1,5 @@
---[[ 
-Commenting code. 
+--[[
+Commenting code.
 ]]
 
 return {

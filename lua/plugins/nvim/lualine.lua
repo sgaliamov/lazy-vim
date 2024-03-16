@@ -9,7 +9,7 @@ return {
   opts = {
     options = {
       theme = 'gruvbox-material',
-      disabled_filetypes = { "NvimTree" }
+      disabled_filetypes = { 'NvimTree' }
     },
   }
 }

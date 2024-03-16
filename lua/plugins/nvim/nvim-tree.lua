@@ -45,7 +45,7 @@ return {
     disable_netrw       = true,
     update_focused_file = {
       enable = true,
-      update_cwd = true,
+      -- update_cwd = true, -- todo: what is it?
     },
     git                 = {
       enable = false -- very slow
