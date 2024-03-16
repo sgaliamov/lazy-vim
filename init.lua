@@ -41,7 +41,7 @@ require('lazy').setup({
     rtp = {
       disabled_plugins = {
         'gzip',
-        'matchit',         -- matches not only braces
+        'matchit', -- matches not only braces
         -- 'matchparen', -- keep to higlight paired braces
         'netrwPlugin',
         'tarPlugin',
@@ -50,7 +50,7 @@ require('lazy').setup({
         'zipPlugin',
       },
     },
-    checker = { enabled = true },     -- automatically check for plugin updates
+    checker = { enabled = true }, -- automatically check for plugin updates
   }
 })
 

@@ -44,7 +44,7 @@ local function is_used(lhs, modes)
   for _, mode in ipairs(modes) do
     if vim.fn.maparg(lhs, mode) ~= '' then
       local timer = vim.loop.new_timer()
-      timer:start(2000, 0, function()       -- todo: find better way to notify errors
+      timer:start(2000, 0, function() -- todo: find better way to notify errors
         vim.notify(
           'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists. The binding is ignored.', 4)
       end)
@@ -78,9 +78,9 @@ end
 --- @param mappings any example: { [lhs] = { rhs, desc, opts = { buffer = buf }, modes = {'!'}, force = true } };
 --- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
 --- `opts` may have a buffer.
-function M.map_keys(mappings)                    -- todo: map_keys should be able to apply same bindings in different modes
+function M.map_keys(mappings)                -- todo: map_keys should be able to apply same bindings in different modes
   for lhs, mapping in pairs(mappings) do
-    local modes = mapping.modes or mapping.m     -- todo: maybe better merge.
+    local modes = mapping.modes or mapping.m -- todo: maybe better merge.
 
     M.map(lhs, mapping[1], mapping[2], mapping.opts, modes, mapping.force)
   end

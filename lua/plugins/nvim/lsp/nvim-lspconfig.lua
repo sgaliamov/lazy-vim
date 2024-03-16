@@ -10,8 +10,7 @@ return {
 
     lspconfig.rust_analyzer.setup {
       settings = {
-        ['rust-analyzer'] = {
-        },
+        ['rust-analyzer'] = {},
       },
     }
 
@@ -47,7 +46,7 @@ return {
     -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
     -- vim.keymap.set({ 'n', 'v' }, '<A-cr>', vim.lsp.buf.code_action, opts)
     -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set({ '!', 'n', 'v' }, '<A-f>', function()
+    vim.keymap.set({ 'i', 'n', 'v' }, '<A-f>', function()
       vim.lsp.buf.format { async = true }
     end, opts)
     --   end,

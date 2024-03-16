@@ -2,10 +2,9 @@
 local vin = { 'i', 'n', 'v' }
 
 require('keymaps.utils').map_keys({
-  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },      -- todo: should be in the plug config.
+  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },     -- todo: should be in the plug config.
   ['<C-q>'] = { '<cmd>qa<cr>', 'Quit', m = vin }, -- todo: find a way to use Ctrl
   ['<C-s>'] = { '<cmd>wa<cr>', 'Save all', m = vin },
-  -- ['<C-s><C-q>'] = { '<cmd>wqa<cr>', 'Save all & Quit', m = vinc },
   ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
 
   -- Toggle languages.
@@ -15,8 +14,8 @@ require('keymaps.utils').map_keys({
 
   -- Better yanking.
   ['<leader>y'] = { '"+y', 'Yank in clipboard' },
-  ['<leader>Y'] = { '"+Y', 'Yank line in clipboard' }, -- todo: paste from clipboard.
-  ['<leader>p'] = { '"_dP', 'Replace without yanking', m = 'v' },
+  ['<leader>Y'] = { '"+Y', 'Yank line in clipboard' },
+  ['<leader>p'] = { '"_dP', 'Replace without yanking', m = 'v' }, -- use <Shift-Insert> to paste from clipboard.
   ['<leader>yy'] = { '"+yiw', 'Yank inner word in clipboard' },
 
   -- Better navigation.
