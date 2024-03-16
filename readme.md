@@ -8,7 +8,7 @@ git clone -b main https://github.com/sgaliamov/nvim
 
 ## To do
 
-1. configure hop or find better.
+1. comment with <C-/>
 1. refactoring in lua.
 1. rust lsp for terminal.
 1. debug in rust.

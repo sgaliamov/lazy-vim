@@ -1,10 +1,10 @@
 return {
   'phaazon/hop.nvim',
-  config = function()
-    require('hop').setup()
-
+  init = function()
     require('keymaps.utils').map_keys({
-      ['f'] = { ':HopChar1<cr>', 'Hop one charracter' }
+      ['W'] = { ':HopWordAC<cr>', 'Hop to word after the cursor' },
+      ['B'] = { ':HopWordBC<cr>', 'Hop to word before the cursor' },
     })
-  end
+  end,
+  opts = {}
 }
