@@ -16,6 +16,9 @@ opt.cursorline = true    -- highlight the current cursor line.
 opt.signcolumn = 'yes:1' -- to give space for warning signs.
 -- vim.opt.termguicolors = true -- Nvim will automatically attempt to determine if the host terminal supports 24-bit color and will enable this option if it does
 opt.list = true          -- Displays invisible characters.
+opt.listchars:append {
+  trail = '·',
+}
 
 -- Search settings:
 opt.ignorecase = true -- ignore case when searching.

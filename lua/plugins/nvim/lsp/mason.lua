@@ -5,5 +5,13 @@ return {
       ['<leader>M'] = { ':Mason<cr>', 'Mason UI' },
     })
   end,
-  opts = {},   -- required opts or config = true.
+  opts = {
+    ui = {
+      icons = { -- fix for ugly default icons.
+        package_installed = "",
+        package_pending = "",
+        package_uninstalled = "",
+      },
+    }
+  },
 }

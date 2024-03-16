@@ -1,5 +1,8 @@
 local map = require('keymaps.utils').map
 
+-- Use single hotkeys to toggle/focus nvim-tree:
+-- If nvim-tree is focused - close it
+-- Or always focus nvim-tree otherwise
 local tree_focus_or_toggle = function()
   local nvimTree = require('nvim-tree.api')
   local currentBuf = vim.api.nvim_get_current_buf()
@@ -42,18 +45,28 @@ return {
     disable_netrw       = true,
     update_focused_file = {
       enable = true,
+      update_cwd = true,
     },
     git                 = {
       enable = false -- very slow
     },
     filters             = {
-      custom = { ".git" },
+      dotfiles = true
+    },
+    renderer            = {
+      root_folder_label = false, -- Hides the root folder.
+      group_empty = true,        -- Compact folders that only contain a single folder into one node.
+    },
+    live_filter         = {
+      always_show_folders = false, -- Turn into false from true by default.
     },
     view                = {
-      signcolumn = "no",
-      float = {
-        enable = false
-      },
+      number = true,
+      relativenumber = true,
+      signcolumn = 'auto',
+      width = {
+        max = -1, -- set the width automatically to the longest file name.
+      }
     }
   }
 }

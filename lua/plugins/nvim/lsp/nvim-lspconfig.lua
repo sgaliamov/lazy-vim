@@ -10,7 +10,8 @@ return {
 
     lspconfig.rust_analyzer.setup {
       settings = {
-        ['rust-analyzer'] = {},
+        ['rust-analyzer'] = {
+        },
       },
     }
 
@@ -31,11 +32,11 @@ return {
 
     -- local opts = { buffer = ev.buf }
     local opts = {}
-
-    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    --
+    -- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    -- vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    -- vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     -- vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
     -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
@@ -44,9 +45,9 @@ return {
     -- end, opts)
     -- vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
     -- vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
-    vim.keymap.set({ 'n', 'v' }, '<A-cr>', vim.lsp.buf.code_action, opts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-    vim.keymap.set('n', '<A-S-f>', function()
+    -- vim.keymap.set({ 'n', 'v' }, '<A-cr>', vim.lsp.buf.code_action, opts)
+    -- vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set({ '!', 'n', 'v' }, '<A-f>', function()
       vim.lsp.buf.format { async = true }
     end, opts)
     --   end,
