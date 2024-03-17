@@ -31,11 +31,11 @@ return {
 
     lspconfig.jsonls.setup({});
 
-    lspconfig.rust_analyzer.setup {
-      settings = {
-        ['rust-analyzer'] = {},
-      },
-    }
+    -- lspconfig.rust_analyzer.setup {
+    --   settings = {
+    --     ['rust-analyzer'] = {},
+    --   },
+    -- }
 
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
