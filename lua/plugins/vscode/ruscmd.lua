@@ -1,5 +1,5 @@
 return {
-    'aveplen/ruscmd.nvim',
-    opts = {},
-    config = true
+  'aveplen/ruscmd.nvim',
+  event = { 'BufReadPre', 'BufNewFile' },
+  opts = {},
 }

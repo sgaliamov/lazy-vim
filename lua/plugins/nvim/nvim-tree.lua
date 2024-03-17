@@ -29,10 +29,10 @@ end
 
 return {
   'nvim-tree/nvim-tree.lua',
+  event = 'VeryLazy',
   dependencies = {
     'nvim-tree/nvim-web-devicons'
   },
-  event = 'VeryLazy',
   init = function()
     map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
 

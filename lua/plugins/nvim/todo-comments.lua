@@ -1,6 +1,6 @@
 return {
   'folke/todo-comments.nvim',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   dependencies = { "nvim-lua/plenary.nvim" },
   init = function()
     require('keymaps.utils').map_keys({

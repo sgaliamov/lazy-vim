@@ -18,7 +18,6 @@ local spec = {
   { import = 'plugins' }
 }
 
--- todo: setup lazy event for all plugins
 -- Conditional plugings.
 if vim.g.vscode then
   table.insert(spec, { import = 'plugins.vscode' })

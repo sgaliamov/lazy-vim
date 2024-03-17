@@ -2,7 +2,7 @@ local vinc = { '!', 'n', 'v' }
 
 return {
   'folke/which-key.nvim',
-  event = 'VeryLazy',
+  event = { 'BufReadPre', 'BufNewFile' },
   init = function()
     vim.o.timeout = true
     vim.o.timeoutlen = 300
