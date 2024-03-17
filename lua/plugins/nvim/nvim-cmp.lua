@@ -17,6 +17,7 @@ return {
     },
     config = function()
       local cmp = require 'cmp'
+
       cmp.setup({
         snippet = {
           -- REQUIRED - you must specify a snippet engine
@@ -29,20 +30,16 @@ return {
           { name = 'nvim_lsp',               keyword_length = 3 }, -- from language server
           { name = 'nvim_lua',               keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
           { name = 'vsnip',                  keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
-          { name = 'nvim_lsp_signature_help' },     -- display function signatures with current parameter emphasized
-          { name = 'path' },                        -- file paths
+          { name = 'nvim_lsp_signature_help' },                    -- display function signatures with current parameter emphasized
+          { name = 'path' },                                       -- file paths
         },
         mapping = {
           ['<C-p>'] = cmp.mapping.select_prev_item(),
           ['<C-n>'] = cmp.mapping.select_next_item(),
-          -- Add tab support
-          -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-          -- ['<Tab>'] = cmp.mapping.select_next_item(),
-          -- todo: configure mappings.
-          -- ['<C-S-f>'] = cmp.mapping.scroll_docs(-4),
-          -- ['<C-f>'] = cmp.mapping.scroll_docs(4),
+          -- ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+          -- ['<C-d>'] = cmp.mapping.scroll_docs(4),
           -- ['<C-Space>'] = cmp.mapping.complete(),
-          -- ['<C-e>'] = cmp.mapping.close(),
+          ['<Esc>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
