@@ -23,6 +23,8 @@ local function on_attach(bufnr)
 
   -- custom mappings
   map('?', api.tree.toggle_help, 'Help', bufnr, 'n', true)
+
+  -- todo: when open tab keep the explorer.
 end
 
 return {
