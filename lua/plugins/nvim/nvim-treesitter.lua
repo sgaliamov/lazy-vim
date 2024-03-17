@@ -4,7 +4,7 @@ AST for code.
 
 return {
   'nvim-treesitter/nvim-treesitter',
-  -- event = { 'BufReadPre', 'BufNewFile' }, -- todo: probably this breaks the pluggin randomly.
+  -- event = { 'BufReadPre', 'BufNewFile' }, -- todo: probably this randomly breaks the pluggin.
   event = 'VeryLazy',
   build = ':TSUpdate',
   config = function()
@@ -23,6 +23,7 @@ return {
         'markdown_inline',
         'query',
         'rust',
+        'toml',
         'yaml',
       },
       additional_vim_regex_highlighting = false,

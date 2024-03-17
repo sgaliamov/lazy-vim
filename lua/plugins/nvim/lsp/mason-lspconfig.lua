@@ -3,13 +3,13 @@ return {
   dependencies = { 'williamboman/mason.nvim' },
   opts = {
     ensure_installed = {
-      -- 'bashls',
-      -- 'bicep',
+      'bashls',
+      'bicep',
       'biome', -- js and json
       -- 'csharp_ls',
       'lua_ls',
       'marksman', -- md
-      -- 'powershell_es',
+      'powershell_es',
       'rust_analyzer',
       'taplo',   -- toml
       'lemminx', -- xml

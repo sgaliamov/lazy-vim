@@ -50,7 +50,7 @@ return {
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts('Go to declaration'))
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts('Go to definition'))
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts('Go to implementation'))
-        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts('References'))
+        vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts('List references'))
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts('Hover'))
         vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts('Type definition'))
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts('Rename'))

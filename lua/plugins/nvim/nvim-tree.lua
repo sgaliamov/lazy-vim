@@ -33,7 +33,6 @@ return {
     'nvim-tree/nvim-web-devicons'
   },
   event = 'VeryLazy',
-  -- keys = '<leader>e', -- todo: setup key binding here
   init = function()
     map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
 
