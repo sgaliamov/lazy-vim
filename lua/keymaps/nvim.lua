@@ -23,10 +23,6 @@ require('keymaps.utils').map_keys({
   ['<C-d>'] = { '<C-d>zz', 'Scroll down & center' },
   ['<C-u>'] = { '<C-u>zz', 'Scroll up & center' },
 
-  -- Better text editing.
-  ['<A-k>'] = { ':m -2<cr>gv=gv', 'Move text up' },
-  ['<A-j>'] = { ':m +1<cr>gv=gv', 'Move text down' },
-
   -- Move to window using the <Alt>+hjkl/arrow keys.
   ['<C-h>'] = { '<C-w>h', 'Go to left window' }, -- todo: create window if no window on the direction
   ['<C-j>'] = { '<C-w>j', 'Go to lower window' },
