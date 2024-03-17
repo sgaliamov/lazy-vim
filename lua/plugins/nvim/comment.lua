@@ -5,5 +5,13 @@ Commenting code.
 return {
   "numToStr/Comment.nvim",
   event = { "BufReadPre", "BufNewFile" },
-  opts = {}
+  opts = {
+    toggler = {
+      line = 'gc',
+      block = 'gb',
+    },
+    mappings = {
+      extra = false
+    },
+  }
 }

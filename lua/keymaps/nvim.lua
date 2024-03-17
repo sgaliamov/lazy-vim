@@ -1,11 +1,11 @@
--- local vinc = { '!', 'n', 'v' }
 local vin = { 'i', 'n', 'v' }
 
 require('keymaps.utils').map_keys({
-  ['<C-q><C-q>'] = { '<cmd>qa<cr>', 'Quit', m = vin },
-  ['<C-s><C-s>'] = { '<cmd>w<cr>', 'Save file', m = vin },
-  ['<C-s><C-a>'] = { '<cmd>wa<cr>', 'Save all', m = vin },
-  ['<C-s><C-f>'] = { '<cmd>w!<cr>', 'Save file force', m = vin },
+  ['<C-q>'] = { '<cmd>q<cr>', 'Close window', m = vin },
+  ['<A-q>'] = { '<cmd>qa<cr>', 'Close all windows', m = vin },
+  ['<C-s>'] = { '<cmd>w<cr>', 'Save file', m = vin },
+  ['<A-s>'] = { '<cmd>wa<cr>', 'Save all', m = vin },
+  ['<A-S-s>'] = { '<cmd>wa!<cr>', 'Save all (force)', m = vin },
   ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
 
   -- Toggle languages.

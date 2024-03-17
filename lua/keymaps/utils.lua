@@ -42,11 +42,15 @@ local function is_used(lhs, modes)
   modes = type(modes) == 'table' and modes or { modes }
 
   for _, mode in ipairs(modes) do
-    if vim.fn.maparg(lhs, mode) ~= '' then
+    local existing = vim.fn.maparg(lhs, mode)
+
+    -- todo: it blocks now to create longer mappings with same kyes, for example it will not allow to setup `gcc` if `gc` is used already.
+    if existing ~= '' then
       local timer = vim.loop.new_timer()
       timer:start(2000, 0, function() -- todo: find better way to notify errors
         vim.notify(
-          'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists. The binding is ignored.', 4)
+          'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists for `' ..
+          existing .. '`. The binding is ignored.', 4)
       end)
       return true
     end
