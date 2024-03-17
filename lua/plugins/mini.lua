@@ -17,7 +17,6 @@ return {
       --   },
       --   symbol = '·' -- '│'
       -- })
-      -- require('mini.surround').setup()
 
       -- local animate = require('mini.animate')
       -- animate.setup({
