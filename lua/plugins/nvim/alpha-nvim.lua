@@ -5,9 +5,8 @@ Start menu.
 return {
   {
     "goolord/alpha-nvim",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
     event = "VimEnter",
-    init = false,
+    dependencies = { 'nvim-tree/nvim-web-devicons' },
     opts = function()
       local dashboard = require("alpha.themes.dashboard")
       local logo = [[
