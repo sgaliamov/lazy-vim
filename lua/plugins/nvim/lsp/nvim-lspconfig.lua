@@ -55,9 +55,6 @@ return {
         vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts('Type definition'))
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts('Rename'))
         vim.keymap.set({ 'n', 'i', 'v' }, '<A-CR>', vim.lsp.buf.code_action, opts('Code action'))
-        vim.keymap.set({ 'n', 'i', 'v' }, '<A-f>', function()
-          vim.lsp.buf.format { async = true }
-        end, opts('Format'))
         -- vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
         -- vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
         -- vim.keymap.set('n', '<space>wl', function()

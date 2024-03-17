@@ -8,10 +8,8 @@ git clone -b main https://github.com/sgaliamov/nvim
 
 ## To do
 
-1. refactoring in lua.
 1. rust lsp for terminal.
 1. debug in rust.
-1. style settings for lua.
 1. undo tree (try in vscode)
 1. spell checks.
 1. disable some keybindings in insert mode (C-w, C-h).

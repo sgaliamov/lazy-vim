@@ -5,15 +5,16 @@ return {
     ensure_installed = {
       'bashls',
       'bicep',
-      'biome', -- js and json
-      -- 'csharp_ls',
+      'biome',    -- js and json
+      'lemminx',  -- xml
       'lua_ls',
       'marksman', -- md
       'powershell_es',
       'rust_analyzer',
-      'taplo',   -- toml
-      'lemminx', -- xml
-      'yamlls',  -- yaml
+      'stylua',
+      'taplo',  -- toml
+      'yamlls', -- yaml
+      -- 'csharp_ls',
     }
-  }
+  },
 }
