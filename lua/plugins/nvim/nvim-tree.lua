@@ -45,7 +45,6 @@ return {
     disable_netrw       = true,
     update_focused_file = {
       enable = true,
-      -- update_cwd = true, -- todo: what is it?
     },
     git                 = {
       enable = false -- very slow
@@ -55,9 +54,10 @@ return {
     },
     renderer            = {
       root_folder_label = false, -- Hides the root folder.
-      group_empty = true,        -- Compact folders that only contain a single folder into one node.
+      group_empty = true, -- Compact folders that only contain a single folder into one node.
     },
     live_filter         = {
+      prefix = '?',
       always_show_folders = false, -- Turn into false from true by default.
     },
     view                = {
