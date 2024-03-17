@@ -1,21 +1,22 @@
 require 'options'
 
 -- Install lazy vim.
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
+  vim.fn.system {
     'git',
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable',
-    lazypath })
+    lazypath,
+  }
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
 -- Global plugins.
 local spec = {
-  { import = 'plugins' }
+  { import = 'plugins' },
 }
 
 -- Conditional plugings.
@@ -24,17 +25,17 @@ if vim.g.vscode then
 else
   table.insert(spec, {
     { import = 'plugins.nvim' },
-    { import = 'plugins.nvim.lsp' }
+    { import = 'plugins.nvim.lsp' },
   })
 end
 
 -- Load plugings.
-require('lazy').setup({
+require('lazy').setup {
   spec = spec,
   defaults = {
     -- It's recommended to leave version=false for now, since a lot the plugin that support versioning,
     -- have outdated releases, which may break your Neovim install.
-    version = false
+    version = false,
   },
   performance = {
     rtp = {
@@ -50,11 +51,11 @@ require('lazy').setup({
       },
     },
     checker = { enabled = true }, -- automatically check for plugin updates
-  }
-})
+  },
+}
 
-require('keymaps.utils').map_keys({
+require('keymaps.utils').map_keys {
   ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },
-})
+}
 
 require 'keymaps'

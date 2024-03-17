@@ -1,1 +1,1 @@
-local vscode = require('vscode-neovim')
+-- local vscode = require 'vscode-neovim'

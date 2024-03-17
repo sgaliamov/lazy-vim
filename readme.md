@@ -16,9 +16,10 @@ git clone -b main https://github.com/sgaliamov/nvim
 1. how to do undo and redo in insert mode.
 1. navitation in telescope with <C-j/k>
 
-## Nice to have 
+## Nice to have
 
-1. fix some colors: in bufferline and in line numbers.
+1. hide next number in fold colum.
+1. fix some colors: in lualine and in line numbers.
 1. setup for c#.
 1. tree view in telescope.
 1. one tree view for all tabs. configure edgy.

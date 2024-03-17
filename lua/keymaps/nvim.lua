@@ -1,6 +1,6 @@
 local vin = { 'i', 'n', 'v' }
 
-require('keymaps.utils').map_keys({
+require('keymaps.utils').map_keys {
   ['<C-q>'] = { '<cmd>q<cr>', 'Close window', m = vin },
   ['<A-q>'] = { '<cmd>qa<cr>', 'Close all windows', m = vin },
   ['<C-s>'] = { '<cmd>w<cr>', 'Save file', m = vin },
@@ -11,7 +11,7 @@ require('keymaps.utils').map_keys({
   -- Toggle languages.
   -- ['<leader>l'] = { ':noh<cr>', 'Keyboard layouts...' },                   -- todo: find better way to set a group name.
   ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
-  ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },                -- todo: in vscode the layout is not working in insert mode.
+  ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' }, -- todo: in vscode the layout is not working in insert mode.
 
   -- Better yanking.
   ['<leader>y'] = { '"+y', 'Yank in clipboard' },
@@ -32,4 +32,4 @@ require('keymaps.utils').map_keys({
   ['<C-Down>'] = { '<C-w>j', 'Go to lower window' },
   ['<C-Up>'] = { '<C-w>k', 'Go to upper window' },
   ['<C-Right>'] = { '<C-w>l', 'Go to right window' },
-})
+}

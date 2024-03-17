@@ -5,5 +5,5 @@ return {
     'mfussenegger/nvim-dap',
     'folke/neodev.nvim',
   },
-  opts = {}
+  opts = {},
 }

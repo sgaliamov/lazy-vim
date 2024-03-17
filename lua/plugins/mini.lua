@@ -17,25 +17,6 @@ return {
       --   },
       --   symbol = '·' -- '│'
       -- })
-
-      -- local animate = require('mini.animate')
-      -- animate.setup({
-      --   cursor = {
-      --     timing = animate.gen_timing.quartic({ duration = 100, unit = 'total' }),
-      --   },
-      --   open = {
-      --     enable = false
-      --   },
-      --   close = {
-      --     enable = false
-      --   },
-      --   resize = {
-      --     enable = false
-      --   },
-      --   scroll = {
-      --     enable = false
-      --   }
-      -- })
     end
-  end
+  end,
 }

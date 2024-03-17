@@ -8,7 +8,7 @@ return {
   event = 'VeryLazy',
   build = ':TSUpdate',
   config = function()
-    require 'nvim-treesitter.configs'.setup {
+    require('nvim-treesitter.configs').setup {
       highlight = {
         enable = true,
       },
@@ -30,10 +30,10 @@ return {
       incremental_selection = {
         enable = true,
         keymaps = {
-          init_selection = '<cr>',   -- set to `false` to disable one of the mappings
+          init_selection = '<cr>', -- set to `false` to disable one of the mappings
           node_incremental = '<cr>',
           scope_incremental = false, -- todo: do i need it?
-          node_decremental = '<bs>'
+          node_decremental = '<bs>',
         },
       },
     }
@@ -41,5 +41,5 @@ return {
     -- Treesitter folding
     -- vim.wo.foldmethod = 'expr'
     -- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
-  end
+  end,
 }

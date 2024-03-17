@@ -7,9 +7,9 @@ return {
     vim.o.timeout = true
     vim.o.timeoutlen = 300
 
-    require('keymaps.utils').map_keys({
+    require('keymaps.utils').map_keys {
       ['<F4>'] = { '<cmd>WhichKey<cr>', 'Which key', m = vinc },
-    });
+    }
   end,
-  opts = {} -- required
+  opts = {}, -- required
 }

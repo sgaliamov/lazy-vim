@@ -28,7 +28,7 @@ local function key_opts(description, buffer_or_opts)
     desc = description,
     noremap = true,
     nowait = true,
-    silent = true
+    silent = true,
   }
 
   return vim.tbl_extend('force', default_opts, is_opts and buffer_or_opts or {})
@@ -49,8 +49,15 @@ local function is_used(lhs, modes)
       local timer = vim.loop.new_timer()
       timer:start(2000, 0, function() -- todo: find better way to notify errors
         vim.notify(
-          'Mapping for "' .. lhs .. '" in mode "' .. mode .. '" already exists for `' ..
-          existing .. '`. The binding is ignored.', 4)
+          'Mapping for "'
+            .. lhs
+            .. '" in mode "'
+            .. mode
+            .. '" already exists for `'
+            .. existing
+            .. '`. The binding is ignored.',
+          4
+        )
       end)
       return true
     end
@@ -82,7 +89,7 @@ end
 --- @param mappings any example: { [lhs] = { rhs, desc, opts = { buffer = buf }, modes = {'!'}, force = true } };
 --- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
 --- `opts` may have a buffer.
-function M.map_keys(mappings)                -- todo: map_keys should be able to apply same bindings in different modes
+function M.map_keys(mappings) -- todo: map_keys should be able to apply same bindings in different modes
   for lhs, mapping in pairs(mappings) do
     local modes = mapping.modes or mapping.m -- todo: maybe better merge.
 

@@ -12,20 +12,20 @@ return {
   init = function()
     local builtin = require 'telescope.builtin'
 
-    require('keymaps.utils').map_keys({
+    require('keymaps.utils').map_keys {
       ['<leader>fg'] = { builtin.git_files, 'Git files' },
       ['<leader>ff'] = { builtin.find_files, 'Find files' },
-      ['<leader>fr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' }
-    })
+      ['<leader>fr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' },
+    }
   end,
   config = function()
-    require("telescope").setup {
+    require('telescope').setup {
       extensions = {
-        ["ui-select"] = {
-          require("telescope.themes").get_dropdown {}
-        }
-      }
+        ['ui-select'] = {
+          require('telescope.themes').get_dropdown {},
+        },
+      },
     }
-    require("telescope").load_extension("ui-select")
-  end
+    require('telescope').load_extension 'ui-select'
+  end,
 }

@@ -4,7 +4,7 @@ local map = require('keymaps.utils').map
 -- If nvim-tree is focused - close it
 -- Or always focus nvim-tree otherwise
 local tree_focus_or_toggle = function()
-  local nvimTree = require('nvim-tree.api')
+  local nvimTree = require 'nvim-tree.api'
   local currentBuf = vim.api.nvim_get_current_buf()
   local currentBufFt = vim.api.nvim_get_option_value('filetype', { buf = currentBuf })
 
@@ -31,7 +31,7 @@ return {
   'nvim-tree/nvim-tree.lua',
   event = 'VeryLazy',
   dependencies = {
-    'nvim-tree/nvim-web-devicons'
+    'nvim-tree/nvim-web-devicons',
   },
   init = function()
     map('<leader>e', tree_focus_or_toggle, 'Toggle tree', nil, nil, true)
@@ -41,33 +41,33 @@ return {
     vim.g.loaded_netrwPlugin = 1
   end,
   opts = {
-    on_attach           = on_attach,
-    hijack_cursor       = true,
-    disable_netrw       = true,
+    on_attach = on_attach,
+    hijack_cursor = true,
+    disable_netrw = true,
     update_focused_file = {
       enable = true,
     },
-    git                 = {
-      enable = false -- very slow
+    git = {
+      enable = false, -- very slow
     },
-    filters             = {
-      dotfiles = true
+    filters = {
+      dotfiles = true,
     },
-    renderer            = {
+    renderer = {
       root_folder_label = false, -- Hides the root folder.
       group_empty = true, -- Compact folders that only contain a single folder into one node.
     },
-    live_filter         = {
+    live_filter = {
       prefix = '?',
       always_show_folders = false, -- Turn into false from true by default.
     },
-    view                = {
+    view = {
       number = true,
       relativenumber = true,
       signcolumn = 'auto',
       width = {
         max = -1, -- set the width automatically to the longest file name.
-      }
-    }
-  }
+      },
+    },
+  },
 }
