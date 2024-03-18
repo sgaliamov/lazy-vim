@@ -5,5 +5,5 @@ Show HEX colors.
 return {
   'NvChad/nvim-colorizer.lua',
   event = { 'BufReadPre', 'BufNewFile' },
-  opts = {},
+  opts = { user_default_options = { names = false } },
 }

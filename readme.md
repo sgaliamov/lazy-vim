@@ -8,7 +8,6 @@ git clone -b main https://github.com/sgaliamov/nvim
 
 ## To do
 
-1. rust lsp for terminal.
 1. debug in rust.
 1. undo tree (try in vscode)
 1. spell checks.
@@ -24,3 +23,4 @@ git clone -b main https://github.com/sgaliamov/nvim
 1. tree view in telescope.
 1. one tree view for all tabs. configure edgy.
 1. <https://stackoverflow.com/questions/5481028/vim-open-each-buffer-in-a-new-tab>
+1. use keys field for plugins.

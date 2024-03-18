@@ -11,7 +11,7 @@ require('keymaps.utils').map_keys {
   -- Toggle languages.
   -- ['<leader>l'] = { ':noh<cr>', 'Keyboard layouts...' },                   -- todo: find better way to set a group name.
   ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
-  ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' }, -- todo: in vscode the layout is not working in insert mode.
+  ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },
 
   -- Better yanking.
   ['<leader>y'] = { '"+y', 'Yank in clipboard' },
@@ -24,7 +24,7 @@ require('keymaps.utils').map_keys {
   ['<C-u>'] = { '<C-u>zz', 'Scroll up & center' },
 
   -- Move to window using the <Alt>+hjkl/arrow keys.
-  ['<C-h>'] = { '<C-w>h', 'Go to left window' }, -- todo: create window if no window on the direction
+  ['<C-h>'] = { '<C-w>h', 'Go to left window' },
   ['<C-j>'] = { '<C-w>j', 'Go to lower window' },
   ['<C-k>'] = { '<C-w>k', 'Go to upper window' },
   ['<C-l>'] = { '<C-w>l', 'Go to right window', force = true }, -- default: redraws and clears the screen
