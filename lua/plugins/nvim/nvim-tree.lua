@@ -25,10 +25,13 @@ local function on_attach(bufnr)
   map('?', api.tree.toggle_help, 'Help', bufnr, 'n', true)
 
   map('l', function()
-    -- todo: when open a new tab, the buffer stays on ntree, what makes the tab name not relevant.
-    api.node.open.tab()
-    api.tree.open()
-    api.node.open.edit()
+    -- todo: fix for non files.
+    -- todo: don't open duplicates.
+    -- todo: when a buffer is closed, close the tree as well.
+    local node = api.tree.get_node_under_cursor()
+    vim.cmd 'wincmd l'
+    api.node.open.tab(node)
+    api.tree.toggle { focus = false }
   end, 'Open with tree', bufnr, 'n', true)
 end
 

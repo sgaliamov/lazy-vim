@@ -7,8 +7,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     toggler = {
-      line = 'gc',
-      block = 'gb',
+      line = '<leader>/',
+      block = '<leader>//',
     },
     mappings = {
       extra = false,
