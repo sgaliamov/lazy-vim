@@ -1,3 +1,7 @@
+--[[
+Auto complete.
+]]
+
 return {
   {
     'hrsh7th/nvim-cmp',
@@ -38,7 +42,7 @@ return {
           ['<C-n>'] = cmp.mapping.select_next_item(),
           -- ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- todo: how it works?
           -- ['<C-d>'] = cmp.mapping.scroll_docs(4),
-          -- ['<C-Space>'] = cmp.mapping.complete(),
+          ['<C-Space>'] = cmp.mapping.complete(),
           ['<Esc>'] = cmp.mapping.abort(),
           ['<CR>'] = cmp.mapping.confirm {
             behavior = cmp.ConfirmBehavior.Insert,

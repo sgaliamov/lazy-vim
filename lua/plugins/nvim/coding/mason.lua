@@ -1,10 +1,5 @@
 return {
   'williamboman/mason.nvim',
-  -- init = function() -- can't be config
-  --   require('keymaps.utils').map_keys {
-  --     ['<leader>M'] = { ':Mason<cr>', 'Mason UI' },
-  --   }
-  -- end,
   opts = {
     ui = {
       icons = { -- fix for ugly default icons.
@@ -15,9 +10,11 @@ return {
     },
   },
   keys = {
-    '<leader>M',
-    ':Mason<cr>',
-    mode = { 'n', 'v' },
-    desc = 'Mason UI',
+    {
+      '<leader>M',
+      ':Mason<cr>',
+      mode = { 'n', 'v' },
+      desc = 'Mason UI',
+    },
   },
 }
