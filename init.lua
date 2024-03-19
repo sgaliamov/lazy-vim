@@ -25,7 +25,7 @@ if vim.g.vscode then
 else
   table.insert(spec, {
     { import = 'plugins.nvim' },
-    { import = 'plugins.nvim.lsp' },
+    { import = 'plugins.nvim.coding' },
   })
 end
 

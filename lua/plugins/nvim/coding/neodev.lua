@@ -1,3 +1,7 @@
+--[[
+Used by `nvim-dap-ui`
+]]
+
 return {
   'folke/neodev.nvim',
   event = 'VeryLazy',

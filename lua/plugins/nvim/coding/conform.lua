@@ -3,7 +3,7 @@ return {
   dependencies = {
     'williamboman/mason-lspconfig.nvim',
   },
-  lazy = true,
+  event = 'VeryLazy',
   cmd = 'ConformInfo',
   keys = {
     {
