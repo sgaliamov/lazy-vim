@@ -24,7 +24,12 @@ local function on_attach(bufnr)
   -- custom mappings
   map('?', api.tree.toggle_help, 'Help', bufnr, 'n', true)
 
-  -- todo: when open tab keep the explorer.
+  map('l', function()
+    -- todo: when open a new tab, the buffer stays on ntree, what makes the tab name not relevant.
+    api.node.open.tab()
+    api.tree.open()
+    api.node.open.edit()
+  end, 'Open with tree', bufnr, 'n', true)
 end
 
 return {
