@@ -20,8 +20,10 @@ require('keymaps.utils').map_keys {
   ['<leader>yy'] = { '"+yiw', 'Yank inner word in clipboard' },
 
   -- Better navigation.
-  ['<C-d>'] = { '<C-d>zz', 'Scroll down & center' },
-  ['<C-u>'] = { '<C-u>zz', 'Scroll up & center' },
+  ['<C-d>'] = { '<C-d>zz', 'Scroll half page down & center' },
+  ['<C-u>'] = { '<C-u>zz', 'Scroll half page up & center' },
+  ['<C-f>'] = { '<C-f>zz', 'Scroll page down & center' },
+  ['<C-b>'] = { '<C-b>zz', 'Scroll page up & center' },
 
   -- Move to window using the <Alt>+hjkl/arrow keys.
   ['<C-h>'] = { '<C-w>h', 'Go to left window' },
