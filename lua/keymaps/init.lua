@@ -4,8 +4,12 @@ require('keymaps.utils').map_keys {
 
   -- Better yanking.
   ['<leader>c'] = { '"_ciw', 'Change inner word without yanking', m = 'n' },
-  ['<leader>x'] = { '"_x', 'Remove without yanking', m = 'n' },
   ['<leader>d'] = { '"_d', 'Delete without yanking' },
+  ['<leader>y'] = { '"+y', 'Yank in clipboard' },
+  ['<leader>Y'] = { '"+Y', 'Yank line in clipboard' },
+  ['x'] = { '"_x', 'Remove without yanking', m = 'n' },
+  ['p'] = { '"_dP', 'Replace without yanking', m = 'v' }, -- use <Shift-Insert> to paste from clipboard.
+
   --   " surrounding workaround
   -- nnoremap s <NOP>
   -- nnoremap sd <NOP>

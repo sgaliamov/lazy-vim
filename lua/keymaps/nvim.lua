@@ -13,13 +13,7 @@ require('keymaps.utils').map_keys {
   ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
   ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },
 
-  -- Better yanking.
-  ['<leader>y'] = { '"+y', 'Yank in clipboard' },
-  ['<leader>Y'] = { '"+Y', 'Yank line in clipboard' },
-  ['<leader>p'] = { '"_dP', 'Replace without yanking', m = 'v' }, -- use <Shift-Insert> to paste from clipboard.
-  ['<leader>yy'] = { '"+yiw', 'Yank inner word in clipboard' },
-
-  -- Better navigation.
+  -- Better pagination.
   ['<C-d>'] = { '<C-d>zz', 'Scroll half page down & center' },
   ['<C-u>'] = { '<C-u>zz', 'Scroll half page up & center' },
   ['<C-f>'] = { '<C-f>zz', 'Scroll page down & center' },
