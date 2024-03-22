@@ -7,8 +7,8 @@ return {
   event = { 'BufReadPre', 'BufNewFile' },
   opts = {
     toggler = {
-      line = 'gc', -- default: gc
-      block = 'gb',
+      line = 'gc', -- default: gcc
+      block = 'gb', -- default: gcb
     },
     mappings = {
       extra = false,

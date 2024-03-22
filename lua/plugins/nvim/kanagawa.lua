@@ -13,14 +13,14 @@ return {
     transparent = true,
     theme = 'wave', -- Load "wave" theme when 'background' option is not set
     background = { -- map the value of 'background' option to a theme
-      dark = 'dragon',
+      dark = 'wave', -- dragon is dimmer
       light = 'lotus',
     },
     colors = {
       theme = {
         all = {
           ui = {
-            bg_gutter = 'none',
+            bg_gutter = 'none', -- fix for input prompt borders.
           },
         },
       },
