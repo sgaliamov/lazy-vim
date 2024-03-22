@@ -24,3 +24,9 @@ git clone -b main https://github.com/sgaliamov/nvim
 1. one tree view for all tabs. configure edgy.
 1. <https://stackoverflow.com/questions/5481028/vim-open-each-buffer-in-a-new-tab>
 1. use keys field for plugins.
+
+## Known issues
+
+### When can't save file
+
+Use `:w!`.

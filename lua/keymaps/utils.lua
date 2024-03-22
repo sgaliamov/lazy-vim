@@ -1,18 +1,3 @@
---[[
-    CHAR	MODE
-    <Space>	Normal, Visual, Select and Operator-pending
-    !       Insert and Command-line
-    c       Command-line
-    i       Insert
-    l       ":lmap" mappings for Insert, Command-line and Lang-Arg
-    n       Normal
-    o       Operator-pending
-    s       Select
-    t       Terminal-Job
-    v       Visual and Select
-    x       Visual
-]]
-
 local M = {}
 
 --- Create key options.

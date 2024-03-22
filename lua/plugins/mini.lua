@@ -8,15 +8,6 @@ return {
     else
       require('mini.pairs').setup()
       require('mini.move').setup()
-
-      -- todo: try https://github.com/lukas-reineke/indent-blankline.nvim
-      -- require('mini.indentscope').setup({
-      --   draw = {
-      --     delay = 0,
-      --     animation = function() return 10 end,
-      --   },
-      --   symbol = '·' -- '│'
-      -- })
     end
   end,
 }
