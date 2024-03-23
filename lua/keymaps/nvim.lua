@@ -2,18 +2,19 @@ local vin = { 'v', 'i', 'n' }
 -- local vn = { 'v', 'n' }
 
 local function toogle_language()
-  local current = vim.api.nvim_get_option 'spelllang'
-  local default = ''
-  local ru = 'russian-jcukenwin'
+  local current = vim.api.nvim_exec('set keymap?', true)
+  local ru = '  keymap=russian-jcukenwin'
 
-  if current == default then
-    vim.api.nvim_command('set keymap=' .. ru)
+  if current == ru then
+    vim.notify 'En'
+    vim.api.nvim_command 'set keymap='
   else
-    vim.api.nvim_command('set keymap=' .. default)
+    vim.notify 'Ru'
+    vim.api.nvim_command 'set keymap=russian-jcukenwin'
   end
 end
 
--- To be albe to use a shortcut in the insert mode use A.
+-- To be albe to use a shortcut in the insert mode use A[lt].
 require('keymaps.utils').map_keys {
   -- Save and quit.
   { '<C-q>', '<cmd>q<cr>', 'Close window', m = vin },
@@ -23,10 +24,9 @@ require('keymaps.utils').map_keys {
 
   -- General.
   { 'jj', '<Esc>', 'Fast excape', m = 'i', remap = true },
-  -- { '<A-l>', toogle_language, 'Keyboard layouts...', m = vin },
+  { '<C-A-l>', toogle_language, 'Toggle keyboard layout', m = vin },
 
-
-  -- Move to window using the <Alt>+hjkl/arrow keys.
+  -- Move to window.
   { '<C-h>', '<C-w>h', 'Go to left window' },
   { '<C-j>', '<C-w>j', 'Go to lower window' },
   { '<C-k>', '<C-w>k', 'Go to upper window' },
