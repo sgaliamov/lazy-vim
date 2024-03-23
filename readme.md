@@ -15,16 +15,12 @@ git clone -b main https://github.com/sgaliamov/nvim
 
 ## Nice to have
 
-1. hide next number in fold colum.
-1. fix some colors: in lualine and in line numbers.
+1. hide the nesting number in the fold colum.
 1. setup for c#.
 1. tree view in telescope.
 1. one tree view for all tabs. configure edgy.
 1. <https://stackoverflow.com/questions/5481028/vim-open-each-buffer-in-a-new-tab>
-1. use keys field for plugins.
 
 ## Known issues
 
-### When can't save file
-
-Use `:w!`.
+- When can't save file, use `:w!`.
