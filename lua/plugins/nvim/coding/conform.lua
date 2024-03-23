@@ -11,7 +11,7 @@ return {
       function()
         require('conform').format()
       end,
-      mode = { 'n', 'v', 'i' },
+      mode = { 'v', 'i', 'n' },
       desc = 'Format code',
     },
   },

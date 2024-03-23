@@ -25,7 +25,9 @@ return {
         dashboard.button('n', ' ' .. ' New file', '<cmd> ene <BAR> startinsert <cr>'),
         dashboard.button('r', ' ' .. ' Recent files', '<cmd> Telescope oldfiles <cr>'),
         dashboard.button('g', ' ' .. ' Find text', '<cmd> Telescope live_grep <cr>'),
-        -- dashboard.button('c', ' ' .. ' Config', "<cmd> lua require('lazyvim.util').telescope.config_files() <cr>"), -- todo: open config project
+        -- dashboard.button('c', ' ' .. ' Config', function()
+        --   return LazyVim.telescope('find_files', { cwd = 'C:/Users/u01sga/AppData/Local/nvim' })
+        -- end), -- todo: open config project
         dashboard.button('l', '󰒲 ' .. ' Lazy', '<cmd> Lazy <cr>'),
         dashboard.button('m', ' ' .. ' Mason', '<cmd> Mason <cr>'),
         dashboard.button('q', ' ' .. ' Quit', '<cmd> qa <cr>'),
