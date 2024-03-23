@@ -22,7 +22,7 @@ local function on_attach(bufnr)
   api.config.mappings.default_on_attach(bufnr)
 
   -- custom mappings
-  map('?', api.tree.toggle_help, 'Help', bufnr, 'n', true)
+  map('?', api.tree.toggle_help, 'Help', 'n', bufnr, true)
 
   map('l', function()
     -- todo: fix for non files.
@@ -32,7 +32,7 @@ local function on_attach(bufnr)
     vim.cmd 'wincmd l'
     api.node.open.tab(node)
     api.tree.toggle { focus = false }
-  end, 'Open with tree', bufnr, 'n', true)
+  end, 'Open with tree', 'n', bufnr, true)
 end
 
 return {

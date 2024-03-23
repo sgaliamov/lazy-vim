@@ -6,10 +6,6 @@ local function to_table(arg)
   return type(arg) == 'table' and arg or arg and { arg } or {}
 end
 
--- local function is_empty(table)
---   return next(table) == nil
--- end
-
 --- Create key options.
 --- @param description string is mandatory
 --- @param buffer_or_opts table | number | nil
@@ -51,7 +47,7 @@ local function is_used(lhs, modes)
             .. '" already exists for `'
             .. existing
             .. '`. The binding is ignored.',
-          4
+          4 -- error
         )
       end)
       return true
