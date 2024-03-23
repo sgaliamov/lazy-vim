@@ -1,17 +1,29 @@
-local vin = { 'i', 'n', 'v' }
+local vin = { 'v', 'i', 'n' }
+-- local vn = { 'v', 'n' }
 
+local function toogle_language()
+  local current = vim.api.nvim_get_option 'spelllang'
+  local default = ''
+  local ru = 'russian-jcukenwin'
+
+  if current == default then
+    vim.api.nvim_command('set keymap=' .. ru)
+  else
+    vim.api.nvim_command('set keymap=' .. default)
+  end
+end
+
+-- To be albe to use a shortcut in the insert mode use A.
 require('keymaps.utils').map_keys {
+  -- Save and quit.
   ['<C-q>'] = { '<cmd>q<cr>', 'Close window', m = vin },
   ['<A-q>'] = { '<cmd>qa<cr>', 'Close all windows', m = vin },
   ['<C-s>'] = { '<cmd>w<cr>', 'Save file', m = vin },
   ['<A-s>'] = { '<cmd>wa<cr>', 'Save all', m = vin },
-  ['<A-S-s>'] = { '<cmd>wa!<cr>', 'Save all (force)', m = vin },
-  ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
 
-  -- Toggle languages.
-  -- ['<leader>l'] = { ':noh<cr>', 'Keyboard layouts...' },                   -- todo: find better way to set a group name.
-  ['<leader>lr'] = { ':set keymap=russian-jcukenwin<cr>', 'Russian layout' }, -- todo: implement toggle
-  ['<leader>ld'] = { ':set keymap=""<cr>', 'Default layout' },
+  -- General.
+  ['jj'] = { '<Esc>', 'Fast excape', m = 'i', opts = { remap = true } },
+  -- ['<A-l>'] = { toogle_language, 'Keyboard layouts...', m = vin },
 
   -- Better pagination.
   ['<C-d>'] = { '<C-d>zz', 'Scroll half page down & center' },
