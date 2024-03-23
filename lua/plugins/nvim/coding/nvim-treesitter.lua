@@ -4,7 +4,6 @@ AST for code.
 
 return {
   'nvim-treesitter/nvim-treesitter',
-  -- event = { 'BufReadPre', 'BufNewFile' }, -- todo: probably this randomly breaks the pluggin.
   event = 'VeryLazy',
   build = ':TSUpdate',
   config = function()
@@ -37,9 +36,5 @@ return {
         },
       },
     }
-
-    -- Treesitter folding
-    -- vim.wo.foldmethod = 'expr'
-    -- vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
   end,
 }
