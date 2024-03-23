@@ -37,6 +37,10 @@ require('keymaps.utils').map_keys {
   { 'sd9', 'di(h"_2s<C-r>"<Esc>', m = { 'v', 'n' } },
   { 'sd[', 'di[h"_2s<C-r>"<Esc>', m = { 'v', 'n' } },
   { 'sd{', 'di{h"_2s<C-r>"<Esc>', m = { 'v', 'n' } },
+
+  -- Change surrounding
+  { '\'"', 'di\'h"_2s"<C-r>""<Esc>', m = 'n' },
+  { '"\'', 'di"h"_2s\'<C-r>"\'<Esc>', m = 'n' },
 }
 
 if vim.g.vscode then
