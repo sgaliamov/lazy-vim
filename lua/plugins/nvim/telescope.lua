@@ -8,6 +8,7 @@ return {
     'nvim-telescope/telescope-ui-select.nvim',
     -- 'nvim-telescope/telescope-fzf-native.nvim' -- todo: try it
     -- 'nvim-telescope/telescope-file-browser.nvim' -- todo: try it instead of nvim-tree
+    'debugloop/telescope-undo.nvim',
   },
   init = function()
     local builtin = require 'telescope.builtin'
@@ -28,5 +29,6 @@ return {
       },
     }
     require('telescope').load_extension 'ui-select'
+    require('telescope').load_extension 'undo'
   end,
 }
