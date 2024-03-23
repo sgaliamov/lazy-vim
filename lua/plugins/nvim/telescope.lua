@@ -6,29 +6,47 @@ return {
     'BurntSushi/ripgrep',
     'smartpde/telescope-recent-files',
     'nvim-telescope/telescope-ui-select.nvim',
-    -- 'nvim-telescope/telescope-fzf-native.nvim' -- todo: try it
-    -- 'nvim-telescope/telescope-file-browser.nvim' -- todo: try it instead of nvim-tree
     'debugloop/telescope-undo.nvim',
   },
-  init = function()
-    local builtin = require 'telescope.builtin'
-
-    require('keymaps.utils').map_keys {
-      -- ['<leader>fg'] = { builtin.git_files, 'Git files' },
-      { '<leader>ff', builtin.find_files, 'Find files' },
-      { '<leader>fr', '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' },
-      { '<leader>fg', '<cmd> Telescope live_grep <cr>', 'Grep' },
-    }
-  end,
   config = function()
-    require('telescope').setup {
+    local opts = {
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown {},
         },
+        undo = {},
       },
     }
+
+    require('telescope').setup(opts)
     require('telescope').load_extension 'ui-select'
     require('telescope').load_extension 'undo'
   end,
+  keys = {
+    {
+      '<leader>u',
+      '<cmd>Telescope undo<cr>',
+      desc = 'Undo history',
+    },
+    {
+      '<leader>fr',
+      '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>',
+      desc = 'Recent files',
+    },
+    {
+      '<leader>F',
+      '<cmd>Telescope live_grep <cr>',
+      desc = 'Grep',
+    },
+    {
+      '<leader>fg',
+      '<cmd>lua require("telescope.builtin").git_files()<cr>',
+      desc = 'Git files',
+    },
+    {
+      '<leader>ff',
+      '<cmd>lua require("telescope.builtin").find_files()<cr>',
+      desc = 'Find files',
+    },
+  },
 }
