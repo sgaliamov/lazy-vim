@@ -14,9 +14,9 @@ return {
 
     require('keymaps.utils').map_keys {
       -- ['<leader>fg'] = { builtin.git_files, 'Git files' },
-      ['<leader>ff'] = { builtin.find_files, 'Find files' },
-      ['<leader>fr'] = { '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' },
-      ['<leader>fg'] = { '<cmd> Telescope live_grep <cr>', 'Grep' },
+      { '<leader>ff', builtin.find_files, 'Find files' },
+      { '<leader>fr', '<cmd>lua require("telescope").extensions.recent_files.pick()<cr>', 'Recent files' },
+      { '<leader>fg', '<cmd> Telescope live_grep <cr>', 'Grep' },
     }
   end,
   config = function()

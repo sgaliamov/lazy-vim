@@ -55,7 +55,7 @@ require('lazy').setup {
 }
 
 require('keymaps.utils').map_keys {
-  ['<leader>L'] = { ':Lazy<cr>', 'Lazy UI' },
+  { '<leader>L', ':Lazy<cr>', 'Lazy UI' },
 }
 
 require 'keymaps'

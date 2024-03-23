@@ -1,5 +1,15 @@
 local M = {}
 
+--- Converts a value into talbe.
+--- @param arg nil | table | any
+local function to_table(arg)
+  return type(arg) == 'table' and arg or arg and { arg } or {}
+end
+
+-- local function is_empty(table)
+--   return next(table) == nil
+-- end
+
 --- Create key options.
 --- @param description string is mandatory
 --- @param buffer_or_opts table | number | nil
@@ -24,7 +34,7 @@ end
 --- @param modes string | string[] Modes to check.
 --- @return boolean true if used
 local function is_used(lhs, modes)
-  modes = type(modes) == 'table' and modes or { modes }
+  modes = to_table(modes)
 
   for _, mode in ipairs(modes) do
     local existing = vim.fn.maparg(lhs, mode)
@@ -32,7 +42,7 @@ local function is_used(lhs, modes)
     -- todo: it blocks now to create longer mappings with same kyes, for example it will not allow to setup `gcc` if `gc` is used already.
     if existing ~= '' then
       local timer = vim.loop.new_timer()
-      timer:start(2000, 0, function() -- todo: find better way to notify errors
+      timer:start(5000, 0, function() -- todo: find better way to notify errors
         vim.notify(
           'Mapping for "'
             .. lhs
@@ -58,9 +68,9 @@ end
 --- @param rhs string | function
 --- @param description string is mandatory
 --- @param buffer_or_opts table | number | nil
---- @param modes string | string[] | nil Normal, Visual, Select, Operator-pending if `nil`
+--- @param modes string | string[] | nil { Normal, Visual, Select, Operator-pending } if `nil`
 --- @param force boolean | nil
-function M.map(lhs, rhs, description, buffer_or_opts, modes, force)
+function M.map(lhs, rhs, description, modes, buffer_or_opts, force)
   modes = modes or { 'n', 'v', 'o' }
   if not force and is_used(lhs, modes) then
     return
@@ -70,15 +80,35 @@ function M.map(lhs, rhs, description, buffer_or_opts, modes, force)
   vim.keymap.set(modes, lhs, rhs, opts)
 end
 
---- Set multiple mappings.
---- @param mappings any example: { [lhs] = { rhs, desc, opts = { buffer = buf }, modes = {'!'}, force = true } };
---- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
---- `opts` may have a buffer.
-function M.map_keys(mappings) -- todo: map_keys should be able to apply same bindings in different modes
-  for lhs, mapping in pairs(mappings) do
-    local modes = mapping.modes or mapping.m -- todo: maybe better merge.
+--- Remove extra items.
+--- @param mapping table
+local function clean_opts(mapping)
+  mapping[1] = nil
+  mapping[2] = nil
+  mapping[3] = nil
+  mapping.m = nil
+  mapping.modes = nil
+  mapping.force = nil
+end
 
-    M.map(lhs, mapping[1], mapping[2], mapping.opts, modes, mapping.force)
+--- Set multiple mappings.
+--- @param mappings any example: { lhs, rhs, desc, ...opts, [modes|m] = [{ '!', 'v' }|'n'], force = true };
+--- where `modes` is a string or a table; Normal, Visual, Select, Operator-pending if `nil`.
+--- all other options are passed as is `opts`.
+function M.map_keys(mappings)
+  for _, opts in ipairs(mappings) do
+    local has_modes = opts.m ~= nil or opts.modes ~= nil
+    local modes = has_modes and vim.tbl_deep_extend('force', to_table(opts.m), to_table(opts.modes)) or nil
+    local lhses = to_table(opts[1])
+    local rhs = opts[2]
+    local desc = opts[3]
+    local force = opts.force
+
+    clean_opts(opts)
+
+    for _, lhs in ipairs(lhses) do
+      M.map(lhs, rhs, desc, modes, opts, force)
+    end
   end
 end
 
