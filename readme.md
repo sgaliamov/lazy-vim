@@ -9,7 +9,6 @@ git clone -b main https://github.com/sgaliamov/nvim
 ## To do
 
 1. debug in rust.
-1. undo tree (try in vscode)
 1. spell checks.
 1. disable some keybindings in insert mode (C-w, C-h).
 1. navitation in telescope with <C-j/k>

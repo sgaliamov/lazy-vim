@@ -15,7 +15,7 @@ return {
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-nvim-lsp-signature-help',
       'hrsh7th/cmp-nvim-lua',
-      'hrsh7th/cmp-path',
+      'hrsh7th/cmp-path', -- slow
       'hrsh7th/cmp-vsnip',
       'hrsh7th/vim-vsnip',
     },
@@ -30,12 +30,12 @@ return {
           end,
         },
         sources = {
-          { name = 'buffer', keyword_length = 2 }, -- source current buffer
           { name = 'nvim_lsp', keyword_length = 3 }, -- from language server
           { name = 'nvim_lua', keyword_length = 2 }, -- complete neovim's Lua runtime API such vim.lsp.*
           { name = 'vsnip', keyword_length = 2 }, -- nvim-cmp source for vim-vsnip
           { name = 'nvim_lsp_signature_help' }, -- display function signatures with current parameter emphasized
-          { name = 'path' }, -- file paths
+          { name = 'buffer', keyword_length = 2 }, -- source current buffer
+          -- { name = 'path' }, -- file paths; slow.
         },
         mapping = {
           ['<C-p>'] = cmp.mapping.select_prev_item(),
