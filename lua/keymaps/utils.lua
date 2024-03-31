@@ -71,7 +71,7 @@ function M.map(lhs, rhs, description, modes, buffer_or_opts, force)
   if not force and is_used(lhs, modes) then
     return
   end
-
+  -- todo: if rhs is nop just add description in which key.
   local opts = key_opts(description, buffer_or_opts)
   vim.keymap.set(modes, lhs, rhs, opts)
 end
