@@ -1,10 +1,13 @@
 require('keymaps.utils').map_keys {
-  { '<Esc>', '<Esc>:noh<cr>', 'Cancel search highlighting with ESC' },
+  { '<Esc>', ':noh<cr><Esc>', 'Cancel search highlighting with ESC' },
   { '<leader><leader>', '<nop>', 'Diable Space in nomal, visual and options modes' },
 
   -- Better yanking.
-  { '<leader>c', '"_c', 'Change inner word without yanking', m = 'n' },
+  { '<leader>c', '"_c', 'Change without yanking', m = 'n' },
+  { '<leader>C', '"_ciw', 'Change inner word without yanking', m = 'n' },
+  { '<leader>x', 'ciw', 'Cut inner word' },
   { '<leader>d', '"_d', 'Delete without yanking' },
+  { '<leader>D', '"_diw', 'Delete inner word without yanking' },
   { '<leader>y', '"+y', 'Yank in clipboard' },
   { '<leader>Y', '"+Y', 'Yank line in clipboard' },
   { 'x', '"_x', 'Remove without yanking', m = 'n' },
