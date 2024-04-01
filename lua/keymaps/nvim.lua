@@ -1,5 +1,4 @@
 local vin = { 'v', 'i', 'n' }
--- local vn = { 'v', 'n' }
 
 local function toogle_language()
   local current = vim.api.nvim_exec('set keymap?', true)
@@ -36,9 +35,15 @@ require('keymaps.utils').map_keys {
   { '<C-Up>', '<C-w>k', 'Go to upper window' },
   { '<C-Right>', '<C-w>l', 'Go to right window' },
 
-  -- Better pagination.
+  -- Better pagination (does not work in vscode).
   { '<C-d>', '<C-d>zz', 'Scroll half page down & center' },
   { '<C-u>', '<C-u>zz', 'Scroll half page up & center' },
   { '<C-f>', '<C-f>zz', 'Scroll page down & center' },
   { '<C-b>', '<C-b>zz', 'Scroll page up & center' },
+
+  -- Navigation (does not work in vscode).
+  { '<C-h>', '<Left>', 'Left in insert mode', m = 'i' }, -- default: backspace.
+  { '<C-l>', '<Right>', 'Right in insert mode', m = 'i' }, -- default: prints .
+  { '<C-k>', '<Up>', 'Left in insert mode', m = 'i' }, -- default: digraphs ø.
+  { '<C-j>', '<Down>', 'Down in insert mode', m = 'i' }, -- default: new line.
 }
