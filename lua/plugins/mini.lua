@@ -6,7 +6,11 @@ return {
     if vim.g.vscode then
       -- todo: make a configuration file to define which mini plugings to load.
     else
-      require('mini.pairs').setup()
+      require('mini.pairs').setup {
+        mappings = {
+          ['<'] = { action = 'open', pair = '<>', neigh_pattern = '[^\\].' },
+        },
+      }
       require('mini.move').setup()
     end
   end,

@@ -11,4 +11,19 @@ require('keymaps.utils').map_keys {
     'Refactring: Rename',
     m = vn,
   },
+  {
+    'u',
+    function()
+      vscode.call 'undo'
+    end,
+    'Replace vim undo',
+    m = vn,
+  },
+  {
+    '<Enter>',
+    function()
+      vscode.call 'editor.action.smartSelect.expand'
+    end,
+    m = vn,
+  },
 }
