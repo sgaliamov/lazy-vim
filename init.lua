@@ -1,3 +1,5 @@
+-- location: C:\Users\u01sga\AppData\Local\nvim
+
 require 'options'
 
 -- Install lazy vim.
@@ -21,7 +23,7 @@ local spec = {
 
 -- Conditional plugings.
 if vim.g.vscode then
-  table.insert(spec, { import = 'plugins.vscode' })
+  table.insert(spec, { import = 'plugins.vscode-plugs' })
 else
   table.insert(spec, {
     { import = 'plugins.nvim' },

@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
 if vim.g.vscode then
-  require 'options.vscode'
+  require 'options.vscode-opts'
 else
   require 'options.nvim'
 end

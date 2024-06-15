@@ -49,7 +49,7 @@ return {
         vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts 'Go to implementation')
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts 'List references')
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts 'Hover')
-        vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, opts 'Type definition')
+        vim.keymap.set('n', '<leader>td', vim.lsp.buf.type_definition, opts 'Type definition')
         vim.keymap.set('n', '<leader>rr', vim.lsp.buf.rename, opts 'Rename')
         vim.keymap.set({ 'n', 'i', 'v' }, '<A-CR>', vim.lsp.buf.code_action, opts 'Code action')
         -- vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, opts)
