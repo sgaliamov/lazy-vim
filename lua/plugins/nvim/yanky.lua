@@ -4,5 +4,5 @@ return {
   opts = {
     highlight = { timer = 250 },
   },
-  -- keys = {} -- keys override breaks default bindings.
+  -- keys = {} -- keys overriding breaks default bindings.
 }

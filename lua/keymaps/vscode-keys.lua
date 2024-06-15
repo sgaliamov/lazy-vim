@@ -1,6 +1,6 @@
 local vn = { 'v', 'n' }
 local vsc = require 'vscode-neovim'
-
+--[[
 require('keymaps.utils').map_keys {
   -- Refactring: rename.
   {
@@ -34,3 +34,4 @@ require('keymaps.utils').map_keys {
     m = vn,
   },
 }
+ ]]

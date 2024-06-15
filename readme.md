@@ -11,11 +11,11 @@ git clone -b main https://github.com/sgaliamov/nvim
 1. debug in rust.
 1. spell checks.
 1. disable some keybindings in insert mode (C-w, C-h).
-1. navitation in telescope with <C-j/k>
+1. navigation in telescope with <C-j/k>
 
 ## Nice to have
 
-1. hide the nesting number in the fold colum.
+1. hide the nesting number in the fold column.
 1. setup for c#.
 1. tree view in telescope.
 1. one tree view for all tabs. configure edgy.

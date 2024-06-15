@@ -1,4 +1,4 @@
--- location: C:\Users\u01sga\AppData\Local\nvim
+-- real location is: C:\Users\<user name>\AppData\Local\nvim
 
 require 'options'
 
@@ -54,10 +54,6 @@ require('lazy').setup {
     },
     checker = { enabled = true }, -- automatically check for plugin updates
   },
-}
-
-require('keymaps.utils').map_keys {
-  { '<leader>L', ':Lazy<cr>', 'Lazy UI' },
 }
 
 require 'keymaps'
