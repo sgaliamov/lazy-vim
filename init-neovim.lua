@@ -23,7 +23,7 @@ local spec = {
 
 -- Conditional plugings.
 if vim.g.vscode then
-  table.insert(spec, { import = 'plugins.vscode-plugs' })
+  -- table.insert(spec, { import = 'plugins.vscode-plugs' })
 else
   table.insert(spec, {
     { import = 'plugins.nvim' },
