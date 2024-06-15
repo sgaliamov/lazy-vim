@@ -14,6 +14,7 @@ require('keymaps.utils').map_keys {
   { '<leader>C', '"_ct', 'Change without yanking', m = 'n' },
   { '<leader>D', '"_dt', 'Delete without yanking' },
   { '<leader>Y', '"+Y', 'Yank line in clipboard' },
+  { '<leader>s', ':w', 'Save file' },
 
   -- Surrounding
   { 's', '<nop>', 'Surround...', m = { 'v', 'n' } },
@@ -52,7 +53,7 @@ require('keymaps.utils').map_keys {
 }
 
 if vim.g.vscode then
-  require 'keymaps.vscode'
+  require 'keymaps.vscode-keys'
 else
   require 'keymaps.nvim'
 end

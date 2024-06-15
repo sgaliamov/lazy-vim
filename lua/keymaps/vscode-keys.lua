@@ -1,12 +1,12 @@
 local vn = { 'v', 'n' }
-local vscode = require 'vscode-neovim'
+local vsc = require 'vscode-neovim'
 
 require('keymaps.utils').map_keys {
   -- Refactring: rename.
   {
     '<leader>rr',
     function()
-      vscode.call 'editor.action.rename'
+      vsc.call 'editor.action.rename'
     end,
     'Refactring: Rename',
     m = vn,
@@ -14,15 +14,22 @@ require('keymaps.utils').map_keys {
   {
     'u',
     function()
-      vscode.call 'undo'
+      vsc.call 'undo'
     end,
     'Replace vim undo',
     m = vn,
   },
   {
-    '<Enter>',
+    '<leader>w',
     function()
-      vscode.call 'editor.action.smartSelect.expand'
+      vsc.call 'editor.action.smartSelect.expand'
+    end,
+    m = vn,
+  },
+  {
+    '<S-C-w>',
+    function()
+      vsc.call 'editor.action.smartSelect.shrink'
     end,
     m = vn,
   },

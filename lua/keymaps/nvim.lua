@@ -24,6 +24,7 @@ require('keymaps.utils').map_keys {
   -- General.
   { 'jj', '<Esc>', 'Fast excape', m = 'i', remap = true },
   { '<C-A-l>', toogle_language, 'Toggle keyboard layout', m = vin },
+  -- { '<Leader>h', ':%s/\\<<C-r><C-w>\\>//g<Left><Left><CR>', 'Replase word' },
 
   -- Move to window.
   { '<C-h>', '<C-w>h', 'Go to left window' },
