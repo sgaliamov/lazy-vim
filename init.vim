@@ -25,7 +25,7 @@ if exists('g:vscode')
 endif
 
 lua << EOF
-  -- to make work may need to create symlink:
-  -- mklink /d C:\tools\neovim\nvim-win64\bin\lua C:\Users\<user name>\AppData\Local\nvim
+  -- to make work may need to create the symlink:
+  -- mklink /d C:\tools\neovim\nvim-win64\bin\lua %userprofile%\AppData\Local\nvim
   require('init-neovim')
 EOF

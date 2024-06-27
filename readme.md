@@ -4,6 +4,7 @@ My `Neovim` config.
 
 ``` bash
 git clone -b main https://github.com/sgaliamov/nvim
+mklink ./nvim/.vimrc %userprofile%/.vimrc
 ```
 
 ## To do
