@@ -35,14 +35,14 @@ In `asvetliakov.vscode-neovim` to enable input mode bindings we need to disable 
     "key": "j",
     "command": "vscode-neovim.send",
     "args": "j",
-    "when": "editorTextFocus && neovim.init && focusedView == 'workbench.panel.output'"
+    "when": "editorTextFocus && neovim.init j&&focusedView == 'workbench.panel.output' &&  neovim.mode == 'insert'"
   }
 
 ```
 
-For some reason we need the full condition: `"when": "editorTextFocus && neovim.init && focusedView == 'workbench.panel.output'"`.
+For some reason we need the full condition including `focusedView == 'workbench.panel.output'`.
 
-After that regular `.vimrc` key bindings just work:
+After that regular key bindings in `.vimrc`  just work:
 
 ``` vim
 imap jj <Esc>
