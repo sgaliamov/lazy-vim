@@ -4,6 +4,8 @@
 let mapleader = " "
 let maplocalleader = "\\"
 
+set clipboard=unnamed,unnamedplus
+
 " Mapping double pressing of the leader key to Escape provides a quick way to exit various modes.
 noremap <leader><leader> <Esc>
 

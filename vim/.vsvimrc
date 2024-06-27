@@ -1,7 +1,6 @@
-so ~\.vimrc
+source ~/.vimrc
 
 set ignorecase
-set clipboard=unnamed,unnamedplus
 
 " use standard options for vs
 set number
