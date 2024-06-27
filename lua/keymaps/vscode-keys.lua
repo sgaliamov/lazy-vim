@@ -1,5 +1,14 @@
-local vn = { 'v', 'n' }
-local vsc = require 'vscode-neovim'
+-- local vsc = require 'vscode-neovim'
+
+local map = vim.keymap.set
+local defaults = { noremap = true, silent = true }
+
+-- it is not possible to just define bindings for the insert mode.
+-- need either to disable configs for vscode-neovim C:\Users\u01sga\AppData\Roaming\Code\User\keybindings.json or use "vscode-neovim.compositeKeys" settings.
+
+-- does not work
+-- map('i', 'jj', '<esc>l', defaults)
+
 --[[
 require('keymaps.utils').map_keys {
   -- Refactring: rename.
