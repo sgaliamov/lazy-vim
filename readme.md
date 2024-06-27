@@ -4,7 +4,11 @@ My `Neovim` config.
 
 ``` cmd
 git clone -b main https://github.com/sgaliamov/nvim
-mklink %userprofile%\.vimrc .vimrc /H
+
+mklink /D C:\tools\neovim\nvim-win64\bin\lua %userprofile%\AppData\Local\nvim
+mklink /H %userprofile%\.vimrc .\nvim\vim\.vimrc
+mklink /H %userprofile%\.vsvimrc .\nvim\vim\.vsvimrc
+mklink /H %userprofile%\.ideavimrc .\nvim\vim\.ideavimrc
 ```
 
 ## To do
