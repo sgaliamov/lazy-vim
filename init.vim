@@ -1,4 +1,4 @@
-source ~/.vimrc
+source .vimrc
 
 if exists('g:vscode')
   " THEME CHANGER

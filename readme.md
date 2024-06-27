@@ -2,9 +2,9 @@
 
 My `Neovim` config.
 
-``` bash
+``` cmd
 git clone -b main https://github.com/sgaliamov/nvim
-mklink ./nvim/.vimrc %userprofile%/.vimrc
+mklink %userprofile%\.vimrc .vimrc /H
 ```
 
 ## To do
