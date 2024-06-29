@@ -12,8 +12,8 @@ set clipboard=unnamed,unnamedplus
 
 " Initiating visual mode from regular selection with Shift and arrows.
 
-" inoremap <S-Left> <Esc>v<Left>
-
+" does not work in vscode as col function is not working
+" inoremap <expr> <S-Left> (vim.fn.col(".") == 1 ? "<Esc>v<Left>" : "")
 " inoremap <silent> <expr> <S-Right> (col('.') == 1 ? '<Esc>v/[^a-z]<CR><Left>:noh<CR>' : '<Esc><Right>v/[^a-z]<CR><Left>:noh<CR>')
 
 " ============ NORMAL ==============
