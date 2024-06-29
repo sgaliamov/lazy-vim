@@ -1,6 +1,10 @@
 source ~/.vimrc
 
-set ignorecase
+" nvim and vscode have it by default, but visual studio does not
+set hlsearch
+set incsearch
+
+" set ignorecase
 
 " use standard options for vs
 " set number
@@ -42,8 +46,8 @@ set ignorecase
 
 " =========== VISUAL STUDIO ===========
 
-inoremap <C-o> <Esc>:vsc File.OpenFile<CR>
-inoremap <C-f> <Esc>:vsc Edit.Find<CR>
+" inoremap <C-o> <Esc>:vsc File.OpenFile<CR>
+" inoremap <C-f> <Esc>:vsc Edit.Find<CR>
 
 " show definition in popup window
 " noremap gD :vsc Edit.PeekDefinition<CR>

@@ -1,6 +1,6 @@
 source ~/.vimrc
 
-map <leader>f <Action>(ReformatCode)
+" map <leader>f <Action>(ReformatCode)
 
 " todo: support all arrows and visual mode
 " inoremap <silent> <expr> <S-Right> (col('.') == 1 ? '<Esc>v/[^a-z]<CR><Left>' : '<Esc><Right>v/[^a-z]<CR><Left>')

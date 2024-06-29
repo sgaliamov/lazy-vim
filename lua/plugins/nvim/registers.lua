@@ -1,3 +1,6 @@
+-- Registries popup
+-- does not work in vscode
+
 return {
   'tversteeg/registers.nvim',
   cmd = 'Registers',

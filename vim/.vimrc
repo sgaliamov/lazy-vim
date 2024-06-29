@@ -5,32 +5,66 @@ let mapleader = " "
 let maplocalleader = "\\"
 
 " need `unnamed` for visual studio
+" nvim [+], vcode [+], vs [+]
 set clipboard=unnamed,unnamedplus
 
 
+
+" =========== ALL MODES ============
+
+" Mapping double pressing of the leader key to Escape provides a quick way to exit various modes.
+" nvim [+], vcode [+], vs [+]
+map <leader><leader> <Esc>
+
+" nvim [+], vcode [+], vs [+]: <silent> is not supported
+noremap <Esc> <Esc>:noh<CR>
+
+" nvim [+], vcode [-]: moves schroll but not the cursor, vs [+]: need to remove other commmands from this binding
+" page back
+noremap <C-b> <C-b>zz
+" 1/2 page up
+noremap <C-u> <C-u>zz
+" 1/2 page down
+noremap <C-d> <C-d>zz
+" page forward
+noremap <C-f> <C-f>zz
+
 " ============ INSERT ==============
 
-" Initiating visual mode from regular selection with Shift and arrows.
+" Initiating   visual mode from regular selection with Shift and arrows.
+" nvim [+], vcode [+], vs [+]
+" need to configure `keybindings.json` in vscode to enable vim bindings.
+inoremap <S-Right> <Esc><Right>viw
+inoremap <S-Left> <Esc>viwo
+inoremap <S-Up> <Esc>Vk
+inoremap <S-Down> <Esc>Vj
+inoremap <S-Home> <Esc>v^
+" `^ moves cursor to the original postion after entering normal mode preventing default shifting when Esc is pressed.
+inoremap <s-end> <Esc>`^v$
 
-" does not work in vscode as col function is not working
-" inoremap <expr> <S-Left> (vim.fn.col(".") == 1 ? "<Esc>v<Left>" : "")
-" inoremap <silent> <expr> <S-Right> (col('.') == 1 ? '<Esc>v/[^a-z]<CR><Left>:noh<CR>' : '<Esc><Right>v/[^a-z]<CR><Left>:noh<CR>')
+" nvim [+], vcode [-]: have to use `vscode-neovim.compositeKeys`, vs [+]
+imap jj <Esc>`^
+" " does not work if press c and <Esc> in normal mode
+" " noremap! <Esc> <Esc>:noh<CR>
+
+
+" NOTES:
+" vim.fn.col function does not work in vscode
+
+
+
+
+
+
+
+
+
+
+
+
 
 " ============ NORMAL ==============
 
-" Mapping double pressing of the leader key to Escape provides a quick way to exit various modes.
-noremap <leader><leader> <Esc>
-
-" Pressing Escape in normal mode clears search highlighting, improving visual clarity.
-noremap <Esc> :noh<CR><Esc>
-
-" ============ NORMAL ==============
-
-" Mapping double pressing of the leader key to Escape provides a quick way to exit various modes.
-" noremap <leader><leader> <Esc>
-
-" Pressing Escape in normal mode clears search highlighting, improving visual clarity.
-" noremap <Esc> :noh<CR><Esc>
 
 " " Changing the inner word without yanking provides a seamless editing experience.
 " nnoremap <leader>c "_ciw
@@ -73,13 +107,6 @@ noremap <Esc> :noh<CR><Esc>
 " vnoremap i <Esc>
 
 
-" " Scrolling half a page and centering the cursor.
-" " does not work in vscode.
-" " nnoremap <C-d> <C-d>zz
-" " nnoremap <C-u> <C-u>zz
-
-" " does not work if press c and <Esc> in normal mode
-" " noremap! <Esc> <Esc>:noh<CR>
 
 " " Changing the inner word without yanking provides a seamless editing experience.
 " nnoremap <leader>c "_ciw
@@ -119,29 +146,9 @@ noremap <Esc> :noh<CR><Esc>
 
 " vnoremap <C-c> y
 
-" vnoremap i <Esc>
-
-
-" " Scrolling half a page and centering the cursor.
-" " does not work in vscode.
-" " nnoremap <C-d> <C-d>zz
-" " nnoremap <C-u> <C-u>zz
-
-" " does not work if press c and <Esc> in normal mode
-" " noremap! <Esc> <Esc>:noh<CR>
-
-" imap jj <Esc>
-
-" inoremap <C-r> <Esc>:reg<CR>"
-" a
 
 " " ============ NORMAL ==============
 
-" " Mapping double pressing of the leader key to Escape provides a quick way to exit various modes.
-" noremap <leader><leader> <Esc>
-
-" " Pressing Escape in normal mode clears search highlighting, improving visual clarity.
-" " noremap <Esc> :noh<CR><Esc>
 
 " " Changing the inner word without yanking provides a seamless editing experience.
 " nnoremap <leader>c "_ciw
@@ -180,14 +187,3 @@ noremap <Esc> :noh<CR><Esc>
 " vnoremap p "_dP
 
 " vnoremap <C-c> y
-
-" vnoremap i <Esc>
-
-
-" " Scrolling half a page and centering the cursor.
-" " does not work in vscode.
-" " nnoremap <C-d> <C-d>zz
-" " nnoremap <C-u> <C-u>zz
-
-" " does not work if press c and <Esc> in normal mode
-" " noremap! <Esc> <Esc>:noh<CR>
