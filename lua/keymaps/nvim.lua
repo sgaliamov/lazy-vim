@@ -1,4 +1,4 @@
-local vin = { 'v', 'i', 'n' }
+--[[ local vin = { 'v', 'i', 'n' }
 
 local function toogle_language()
   local current = vim.api.nvim_exec('set keymap?', true)
@@ -104,3 +104,4 @@ require('keymaps.utils').map_keys {
   { '<C-k>', '<Up>', 'Left in insert mode', m = 'i' }, -- default: digraphs ø.
   { '<C-j>', '<Down>', 'Down in insert mode', m = 'i' }, -- default: new line.
 }
+ ]]

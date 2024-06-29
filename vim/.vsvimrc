@@ -3,44 +3,42 @@ source ~/.vimrc
 set ignorecase
 
 " use standard options for vs
-set number
-set relativenumber
-
-imap jj <Esc>
+" set number
+" set relativenumber
 
 " Enable visual selection in insert mode using Shift + arrow keys
-inoremap <S-Left> <Esc>v<Left>
-inoremap <S-Right> <Esc>v<Right>
-inoremap <S-Up> <Esc>v<Up>
-inoremap <S-Down> <Esc>v<Down>
+" inoremap <S-Left> <Esc>v<Left>
+" inoremap <S-Right> <Esc>v<Right>
+" inoremap <S-Up> <Esc>v<Up>
+" inoremap <S-Down> <Esc>v<Down>
 
-" Enable visual selection in insert mode using Shift + Home/End keys
-inoremap <S-Home> <Esc>v<Home>
-inoremap <S-End> <Esc>v<End>
+" " Enable visual selection in insert mode using Shift + Home/End keys
+" inoremap <S-Home> <Esc>v<Home>
+" inoremap <S-End> <Esc>v<End>
 
-" Enable visual selection in insert mode using Ctrl + arrow keys for word and line selection
-inoremap <C-S-Left> <Esc>v<Left>v<Left>
-inoremap <C-S-Right> <Esc>v<Right>v<Right>
-inoremap <C-S-Up> <Esc>v<Up>v<Up>
-inoremap <C-S-Down> <Esc>v<Down>v<Down>
+" " Enable visual selection in insert mode using Ctrl + arrow keys for word and line selection
+" inoremap <C-S-Left> <Esc>v<Left>v<Left>
+" inoremap <C-S-Right> <Esc>v<Right>v<Right>
+" inoremap <C-S-Up> <Esc>v<Up>v<Up>
+" inoremap <C-S-Down> <Esc>v<Down>v<Down>
 
-" Enable visual selection for entire lines using Shift + Page Up/Page Down
-inoremap <S-PageUp> <Esc>v<PageUp>
-inoremap <S-PageDown> <Esc>v<PageDown>
+" " Enable visual selection for entire lines using Shift + Page Up/Page Down
+" inoremap <S-PageUp> <Esc>v<PageUp>
+" inoremap <S-PageDown> <Esc>v<PageDown>
 
 " ============ RESHARPER ==============
 
 " Ctrl-r-r
-noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
+" noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
 
 " Ctrl-e-f
-noremap <leader>f :vsc ReSharper.ReSharper_SilentCleanupCode<CR>
+" noremap <leader>f :vsc ReSharper.ReSharper_SilentCleanupCode<CR>
 
 " Shift-Alt-F12
-noremap gF :vsc ReSharper.ReSharper_FindUsages<CR>
+" noremap gF :vsc ReSharper.ReSharper_FindUsages<CR>
 
 " Ctrl-Alt-Right
-noremap <leader>w :vsc ReSharper.ReSharper_ExtendSelection<CR>
+" noremap <leader>w :vsc ReSharper.ReSharper_ExtendSelection<CR>
 
 " =========== VISUAL STUDIO ===========
 
@@ -48,22 +46,22 @@ inoremap <C-o> <Esc>:vsc File.OpenFile<CR>
 inoremap <C-f> <Esc>:vsc Edit.Find<CR>
 
 " show definition in popup window
-noremap gD :vsc Edit.PeekDefinition<CR>
+" noremap gD :vsc Edit.PeekDefinition<CR>
 
 " go to implementation (Ctrl-F12)
-noremap gf :vsc Edit.GoToDeclaration<CR>
+" noremap gf :vsc Edit.GoToDeclaration<CR>
 
-" Copy selected text in the visual mode
-vnoremap <C-c> y
+" " Copy selected text in the visual mode
+" vnoremap <C-c> y
 
-" Copy a line in the normal mode
-nnoremap <C-c> yy
+" " Copy a line in the normal mode
+" nnoremap <C-c> yy
 
-" Close window
-nnoremap <C-w><C-q> :clo<CR>
+" " Close window
+" nnoremap <C-w><C-q> :clo<CR>
 
-nnoremap <leader>zl :so ~/.vsvimrc<CR>
-nnoremap <leader>zk :vsc Tools.CustomizeKeyboard<CR>
+" nnoremap <leader>zl :so ~/.vsvimrc<CR>
+" nnoremap <leader>zk :vsc Tools.CustomizeKeyboard<CR>
 
 " move line
 " nnoremap <A-j> :m .+1<CR>==
@@ -75,37 +73,37 @@ nnoremap <leader>zk :vsc Tools.CustomizeKeyboard<CR>
 
 " SURROUNDING
 
-" surrounding workaround
-noremap s <NOP>
-noremap sd <NOP>
+" " surrounding workaround
+" noremap s <NOP>
+" noremap sd <NOP>
 
-" surround inner word
-nnoremap s" ciw"<C-r>""<Esc>
-nnoremap s' ciw'<C-r>"'<Esc>
-nnoremap s, ciw<<C-r>"><Esc>
-nnoremap s9 ciw(<C-r>")<Esc>
-nnoremap s[ ciw[<C-r>"]<Esc>
-nnoremap s{ ciw{<C-r>"}<Esc>
+" " surround inner word
+" nnoremap s" ciw"<C-r>""<Esc>
+" nnoremap s' ciw'<C-r>"'<Esc>
+" nnoremap s, ciw<<C-r>"><Esc>
+" nnoremap s9 ciw(<C-r>")<Esc>
+" nnoremap s[ ciw[<C-r>"]<Esc>
+" nnoremap s{ ciw{<C-r>"}<Esc>
 
-" surround visual selected text
-vnoremap s" c"<C-r>""<Esc>
-vnoremap s' c"<C-r>"'<Esc>
-vnoremap s, c<<C-r>"><Esc>
-vnoremap s9 c(<C-r>")<Esc>
-vnoremap s[ c[<C-r>"]<Esc>
-vnoremap s{ c{<C-r>"}<Esc>
+" " surround visual selected text
+" vnoremap s" c"<C-r>""<Esc>
+" vnoremap s' c"<C-r>"'<Esc>
+" vnoremap s, c<<C-r>"><Esc>
+" vnoremap s9 c(<C-r>")<Esc>
+" vnoremap s[ c[<C-r>"]<Esc>
+" vnoremap s{ c{<C-r>"}<Esc>
 
-" delete surround
-nnoremap sd" di"h"_2s<C-r>"<Esc>
-nnoremap sd' di'h"_2s<C-r>"<Esc>
-nnoremap sd, di<h"_2s<C-r>"<Esc>
-nnoremap sd9 di(h"_2s<C-r>"<Esc>
-nnoremap sd[ di[h"_2s<C-r>"<Esc>
-nnoremap sd{ di{h"_2s<C-r>"<Esc>
+" " delete surround
+" nnoremap sd" di"h"_2s<C-r>"<Esc>
+" nnoremap sd' di'h"_2s<C-r>"<Esc>
+" nnoremap sd, di<h"_2s<C-r>"<Esc>
+" nnoremap sd9 di(h"_2s<C-r>"<Esc>
+" nnoremap sd[ di[h"_2s<C-r>"<Esc>
+" nnoremap sd{ di{h"_2s<C-r>"<Esc>
 
-" change surround
-nnoremap '" di'h"_2s"<C-r>""<Esc>
-nnoremap "' di"h"_2s'<C-r>"'<Esc>
+" " change surround
+" nnoremap '" di'h"_2s"<C-r>""<Esc>
+" nnoremap "' di"h"_2s'<C-r>"'<Esc>
 
 " try https://github.com/VsVim/VsVim/blob/master/Documentation/CSharp%19scripting.md
 " https://github.com/keithn/vsvimguide

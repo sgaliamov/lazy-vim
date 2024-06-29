@@ -1,3 +1,5 @@
+-- Smart navigation.
+
 local vinc = { '!', 'n', 'v' }
 
 return {
