@@ -10,26 +10,6 @@ set incsearch
 " set number
 " set relativenumber
 
-" Enable visual selection in insert mode using Shift + arrow keys
-" inoremap <S-Left> <Esc>v<Left>
-" inoremap <S-Right> <Esc>v<Right>
-" inoremap <S-Up> <Esc>v<Up>
-" inoremap <S-Down> <Esc>v<Down>
-
-" " Enable visual selection in insert mode using Shift + Home/End keys
-" inoremap <S-Home> <Esc>v<Home>
-" inoremap <S-End> <Esc>v<End>
-
-" " Enable visual selection in insert mode using Ctrl + arrow keys for word and line selection
-" inoremap <C-S-Left> <Esc>v<Left>v<Left>
-" inoremap <C-S-Right> <Esc>v<Right>v<Right>
-" inoremap <C-S-Up> <Esc>v<Up>v<Up>
-" inoremap <C-S-Down> <Esc>v<Down>v<Down>
-
-" " Enable visual selection for entire lines using Shift + Page Up/Page Down
-" inoremap <S-PageUp> <Esc>v<PageUp>
-" inoremap <S-PageDown> <Esc>v<PageDown>
-
 " ============ RESHARPER ==============
 
 " Ctrl-r-r

@@ -1,4 +1,4 @@
--- Registries popup
+-- Registers popup.
 -- does not work in vscode
 
 return {
