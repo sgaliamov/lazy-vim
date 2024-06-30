@@ -33,7 +33,7 @@ noremap <C-f> <C-f>zz
 nnoremap <leader>r viw"_dp
 nnoremap <leader>v viw
 noremap <leader>y yiwe
-noremap <leader>x "_ciw
+noremap <leader>x xiw
 noremap <leader>c ciw
 
 nnoremap x "_x

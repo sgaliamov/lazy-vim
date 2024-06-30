@@ -1,14 +1,14 @@
--- local vsc = require 'vscode-neovim'
+local vsc = require 'vscode-neovim'
+local opts = require('keymaps.utils').key_opts;
+local map = vim.keymap.set
 
--- local map = vim.keymap.set
--- local defaults = { noremap = true, silent = true }
+map(
+  {'i', 'v'},
+  'rr',
+  function() vsc.call 'editor.action.rename' end,
+ opts('Refactring: Rename'))
 
-
--- it is not possible to just define bindings for the insert mode.
--- need either to disable configs for vscode-neovim C:\Users\u01sga\AppData\Roaming\Code\User\keybindings.json or use "vscode-neovim.compositeKeys" settings.
-
--- does not work
--- vim.api.nvim_set_keymap('i', 'jj', '<Esc>`^', { noremap = true, silent = true })
+map({'n', 'v'}, '<leader>w', function() vsc.call 'editor.action.smartSelect.expand' end, opts('Expand selection'))
 
 --[[
 require('keymaps.utils').map_keys :{
@@ -22,18 +22,8 @@ require('keymaps.utils').map_keys :{
     m = vn,
   },
   {
-    'u',
-    function()
-      vsc.call 'undo'
-    end,
-    'Replace vim undo',
-    m = vn,
-  },
-  {
     '<leader>w',
-    function()
-      vsc.call 'editor.action.smartSelect.expand'
-    end,
+    function() vsc.call 'editor.action.smartSelect.expand' end,
     m = vn,
   },
   {
