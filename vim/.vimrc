@@ -1,12 +1,11 @@
-" This file contains universal configuraiton which works in all editors and IDE.
-" If some option does not work or has no effect in some IDE, comment it, and leave a note.
-
 let mapleader = " "
 let maplocalleader = "\\"
 
 " need `unnamed` for visual studio
-set clipboard=unnamed,unnamedplus
+" set clipboard=unnamed,unnamedplus
 
+set smartcase
+set ignorecase
 
 " =========== ALL MODES ============
 
@@ -27,12 +26,15 @@ noremap <C-d> <C-d>zz
 " page forward
 noremap <C-f> <C-f>zz
 
-" noremap <C-s> <Esc>:w<CR>
+noremap <C-s> <Esc>:w<CR>
 
-nnoremap <leader>r viw"_dp
+noremap <leader>cc <Esc>ciw
+noremap <leader>ca :%y<CR>
+noremap <leader>r viw"_dP
 nnoremap <leader>v viw
 noremap <leader>y yiwe
-noremap <leader>c ciw
+
+noremap <leader>a GVgg^
 
 
 " ============ NORMAL ==============
@@ -62,8 +64,8 @@ vnoremap p "_dP
 " need to configure `keybindings.json` in vscode to enable vim bindings.
 inoremap <S-Right> <Esc><Right>viw
 inoremap <S-Left> <Esc>viwo
-inoremap <S-Up> <Esc>`^Vk
-inoremap <S-Down> <Esc>`^Vj
+inoremap <S-Up> <Esc>`^vk
+inoremap <S-Down> <Esc>`^vj
 inoremap <S-Home> <Esc>v^
 " `^ moves cursor to the original postion after entering normal mode preventing default shifting when Esc is pressed.
 inoremap <s-end> <Esc>`^v$

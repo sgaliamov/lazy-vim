@@ -4,19 +4,13 @@ source ~/.vimrc
 set hlsearch
 set incsearch
 
-" set ignorecase
-
-" use standard options for vs
-" set number
-" set relativenumber
-
 " ============ RESHARPER ==============
 
 " Ctrl-r-r
-" noremap <leader>r :vsc ReSharper.ReSharper_Rename<CR>
+noremap <leader>rr :vsc ReSharper.ReSharper_Rename<CR>
 
 " Ctrl-e-f
-" noremap <leader>f :vsc ReSharper.ReSharper_SilentCleanupCode<CR>
+noremap <leader>rf :vsc ReSharper.ReSharper_SilentCleanupCode<CR>
 
 " Shift-Alt-F12
 " noremap gF :vsc ReSharper.ReSharper_FindUsages<CR>
@@ -26,7 +20,7 @@ set incsearch
 
 " =========== VISUAL STUDIO ===========
 
-" inoremap <C-o> <Esc>:vsc File.OpenFile<CR>
+nnoremap <leader>o <Esc>:vsc File.OpenFile<CR>
 " inoremap <C-f> <Esc>:vsc Edit.Find<CR>
 
 " show definition in popup window

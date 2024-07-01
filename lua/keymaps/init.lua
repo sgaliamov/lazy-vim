@@ -1,7 +1,7 @@
 local defaults = { noremap = true, silent = true }
 
 if vim.g.vscode then
-  require 'keymaps.vscode'
+  require 'keymaps.code'
 else
   require 'keymaps.nvim'
 end
